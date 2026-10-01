@@ -1,69 +1,34 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ExamCard, SectionHeading, ProgressBar, DestinationCard, CTA } from "@/components/ui";
+import { InteractivePractice } from "@/components/interactive-practice";
+import { exams, studySteps, nextActivity } from "@/lib/content";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main id="main-content">
+    <section className="hero"><div className="hero-wash" /><div className="hero-inner"><div className="hero-copy"><span className="hero-kicker"><span className="kicker-star">✳</span> MADE FOR THE WAY YOU LEARN</span><h1>Prepare smarter.<br /><em>Feel ready.</em></h1><p className="hero-lede">Clear lessons, focused practice and a plan that moves you closer to your exam goal — one study session at a time.</p><div className="hero-actions"><Link href="/signup" className="button">Start preparing <span aria-hidden="true">↗</span></Link><Link href="/exams" className="button button-outline">Explore exams <span aria-hidden="true">→</span></Link></div><div className="hero-proof"><div className="proof-avatars"><span>A</span><span>T</span><span>M</span><span>+</span></div><p><strong>A calmer way to study</strong><br />built for Nigerian exam goals</p></div></div><div className="hero-visual"><div className="visual-orbit orbit-back" /><div className="visual-orbit orbit-front" /><div className="dashboard-preview"><div className="preview-top"><div className="preview-brand"><span className="preview-brand-icon">t.</span><span>My learning</span></div><span className="preview-avatar">AM</span></div><div className="preview-greeting"><div><span className="preview-muted">WEDNESDAY, 14 OCTOBER</span><h2>Good morning, Adaeze <span>✦</span></h2><p>You’re building a good rhythm. Keep going.</p></div><span className="preview-streak"><b>♨</b> 12 day streak</span></div><div className="preview-grid"><div className="preview-exam"><span className="preview-muted">PREPARING FOR</span><div className="exam-title"><span className="exam-monogram">J</span><span><strong>JAMB 2027</strong><small>Target score: 320</small></span><span className="preview-edit">↗</span></div><div className="score-track"><span /></div><div className="score-legend"><span>Study progress</span><b>68%</b></div></div><div className="preview-goal"><span className="preview-muted">TODAY’S GOAL</span><div className="goal-ring"><div><b>18</b><small>of 30</small></div></div><span className="goal-caption">questions completed</span></div></div><div className="preview-bottom"><div className="next-topic"><span className="topic-icon">⌁</span><span><small>NEXT BEST ACTIVITY</small><strong>{nextActivity.title}</strong><em>{nextActivity.duration} · {nextActivity.reason}</em></span></div><Link className="preview-start" href={nextActivity.href} aria-label="Start next best activity">→</Link></div><div className="preview-footer"><span>⌂ &nbsp;Overview</span><span>↗ &nbsp;My subjects</span><span>◷ &nbsp;Progress</span></div></div><div className="floating-chip chip-score"><span className="chip-check">✓</span><span><strong>Weekly accuracy</strong><small>Up 8% this week</small></span><b>+8%</b></div><div className="floating-chip chip-tip"><span className="tip-icon">✦</span><span><small>A QUICK WIN</small><strong>Review 5 weak topics today</strong></span></div></div></div><div className="hero-foot"><span>Learning feels better when you know what to do next.</span><span className="foot-line" /><span>LEARN · PRACTISE · IMPROVE</span></div></section>
+
+    <section className="trust-strip"><div className="trust-copy"><span className="trust-seal">✓</span><span><strong>One place for your exam preparation</strong><small>Structured around the exams students take across Nigeria</small></span></div><div className="trust-exams">{exams.map((exam) => <Link key={exam.slug} href={`/${exam.slug}`}><span className={`trust-dot dot-${exam.color}`} />{exam.name}</Link>)}</div></section>
+
+    <section className="section section-exams"><div className="section-top-row"><SectionHeading eyebrow="Find your path" title="Your exam. Your plan." copy="Choose the exam you’re working towards. We’ll help you make a steady start." /><Link className="quiet-link" href="/exams">See all exam prep <span>↗</span></Link></div><div className="exam-grid">{exams.map((exam) => <ExamCard key={exam.slug} exam={exam} />)}</div></section>
+
+    <section className="section section-method"><div className="method-intro"><span className="eyebrow">A better study rhythm</span><h2>Small steps.<br /><span>Real progress.</span></h2><p>Knowing what to study next makes all the difference. TUTOR-ME brings your learning, practice and progress into one clear routine.</p><Link href="/learn" className="text-link">See how learning works <span>↗</span></Link><div className="method-stamp"><span>TM</span><small>LEARN WITH<br />PURPOSE</small></div></div><div className="method-steps">{studySteps.map((step) => <article className="method-step" key={step.number}><span className="step-number">{step.number}</span><span className="step-symbol">{step.symbol}</span><div><h3>{step.title}</h3><p>{step.copy}</p></div><span className="step-rule" /></article>)}</div></section>
+
+    <section className="section section-learning"><div className="learning-copy"><SectionHeading eyebrow="A plan that adapts to you" title="Your next best step, made clear." copy="Your goals, recent practice and tricky topics help shape a sensible next activity. No complicated setup required." /><div className="personalized-list"><div><span className="list-check">✓</span><span><strong>Know what to do today</strong><small>Get one focused activity that fits your exam goal.</small></span></div><div><span className="list-check">✓</span><span><strong>Spend time where it counts</strong><small>Revisit topics where your answers show room to grow.</small></span></div><div><span className="list-check">✓</span><span><strong>Keep your momentum</strong><small>A flexible study plan helps you return each day.</small></span></div></div><Link href="/planner" className="button">Build my study plan <span>↗</span></Link></div><div className="recommendation-card"><div className="recommendation-top"><span className="recommendation-icon">✦</span><span className="recommendation-label">YOUR NEXT BEST ACTIVITY</span><span className="recommendation-more">•••</span></div><div className="recommendation-profile"><div className="profile-monogram">AM</div><span><strong>Adaeze’s JAMB plan</strong><small>Goal: 320 · 4 subjects</small></span><span className="plan-live"><i /> ON TRACK</span></div><div className="recommendation-focus"><span className="focus-overline">FOCUS FOR TODAY</span><h3>Review Organic Chemistry</h3><p>Your last practice showed this topic could use another look.</p><div className="focus-meta"><span>◷ &nbsp;12 min</span><span>⌁ &nbsp;Chemistry</span><span>◉ &nbsp;Review</span></div><Link href="/ai-tutor" className="focus-button">Pick up where I left off <span>→</span></Link></div><div className="recommendation-footer"><span>WEEKLY STUDY GOAL</span><strong>3.5 <small>/ 5 hrs</small></strong><ProgressBar value={70} color="green" /></div><span className="card-corner-mark">T</span></div></section>
+
+    <section className="journey-band"><div className="journey-inner"><div><span className="eyebrow eyebrow-light">One connected learning journey</span><h2>From “I don’t get it”<br />to “I’ve got this.”</h2><p>Every lesson, practice set and review gives you a clearer way forward.</p></div><div className="journey-orbit"><div className="journey-core"><span>TM</span><small>YOUR<br />JOURNEY</small></div><div className="journey-node node-learn"><b>↗</b><span>LEARN</span></div><div className="journey-node node-practice"><b>⌁</b><span>PRACTISE</span></div><div className="journey-node node-diagnose"><b>◉</b><span>DIAGNOSE</span></div><div className="journey-node node-improve"><b>↟</b><span>IMPROVE</span></div><div className="journey-dotted" /></div></div></section>
+
+    <section className="section section-practice"><div className="practice-copy"><SectionHeading eyebrow="Practice that teaches" title="A better answer starts with understanding." copy="Try a sample question. Pick an answer to see how a clear explanation helps you learn from it." /><div className="practice-assurance"><span>✓</span>Original sample questions for this demo. Past-question rights are checked before publication.</div></div><InteractivePractice /></section>
+
+    <section className="section section-features"><div className="section-top-row"><SectionHeading eyebrow="Tools for the whole journey" title="More than a question bank." copy="Everything you need to move from studying to feeling prepared." /><Link className="quiet-link" href="/dashboard">Explore your learning space <span>↗</span></Link></div><div className="feature-grid"><DestinationCard icon="▣" title="CBT practice" copy="Build exam-day confidence with realistic timed practice and answer review." href="/cbt" tag="EXAM READY" /><DestinationCard icon="✳" title="A helpful study companion" copy="Ask for a simpler explanation or another way to approach a topic." href="/ai-tutor" tag="WHEN YOU NEED IT" /><DestinationCard icon="↻" title="A mistake bank that helps" copy="Keep questions you miss close, so you can understand them and try again." href="/mistake-bank" tag="LEARN FROM IT" /><DestinationCard icon="▦" title="A plan you can follow" copy="Set a goal, find your rhythm and keep track of the work you put in." href="/planner" tag="YOUR DAILY RHYTHM" /></div></section>
+
+    <section className="section section-library"><div className="library-visual"><div className="book-page book-back"><span>JAMB · CHEMISTRY</span><i>04</i></div><div className="book-page book-front"><div className="book-mark">TM</div><span className="book-label">A TUTOR-ME STUDY NOTE</span><strong>Organic<br />Chemistry</strong><small>ALIPHATIC HYDROCARBONS</small><div className="book-illustration"><span className="atom atom-a" /><span className="atom atom-b" /><span className="atom atom-c" /><i /><b /></div><div className="book-meta">SUBJECT GUIDE <span>•</span> 12 MIN READ</div></div><span className="library-note note-one">Clear and focused</span><span className="library-note note-two">Built around the syllabus</span></div><div className="library-copy"><SectionHeading eyebrow="Your study library" title="Good notes. Clear lessons. All in one place." copy="Open a topic to find helpful explanations, study materials and a clear path through what you need to know." /><div className="library-subjects"><span className="subject-chip">English</span><span className="subject-chip">Mathematics</span><span className="subject-chip">Chemistry</span><span className="subject-chip">Biology</span><span className="subject-chip">Physics</span><span className="subject-chip chip-more">+ more</span></div><Link className="text-link" href="/learn">Explore the learning library <span>↗</span></Link></div></section>
+
+    <section className="section section-community"><div className="community-copy"><SectionHeading eyebrow="Progress worth celebrating" title="Show up for your goal. The rest will follow." copy="Build a steady study streak, join a friendly challenge and celebrate the milestones you earn along the way." /><div className="community-stats"><div><span className="stat-icon stat-blue">♨</span><strong>12 days</strong><small>Your current streak</small></div><div><span className="stat-icon stat-gold">✦</span><strong>3 milestones</strong><small>earned this term</small></div><div><span className="stat-icon stat-green">⌁</span><strong>Weekly goal</strong><small>3.5 of 5 hours</small></div></div><Link className="text-link" href="/progress">See your progress <span>↗</span></Link></div><div className="challenge-card"><div className="challenge-top"><span><i /> THIS WEEK’S CHALLENGE</span><span>ENDS IN 3 DAYS</span></div><div className="challenge-art"><span className="challenge-spark">✦</span><div className="challenge-medal">7<small>DAY<br />STREAK</small></div><span className="challenge-dot dot-a" /><span className="challenge-dot dot-b" /><span className="challenge-dot dot-c" /></div><h3>Seven days, one good habit.</h3><p>Study for 20 minutes a day this week and build a routine that sticks.</p><div className="challenge-progress"><div className="challenge-days"><span className="day-done">M</span><span className="day-done">T</span><span className="day-done">W</span><span>T</span><span>F</span><span>S</span><span>S</span></div><div className="challenge-foot"><span>3 of 7 days complete</span><strong>43%</strong></div><ProgressBar value={43} color="gold" /></div></div></section>
+
+    <section className="section section-guidance"><div className="section-top-row"><SectionHeading eyebrow="Plan for what comes next" title="Good guidance for the next step." copy="Preparing for an exam is part of a bigger journey. Find reliable direction along the way." /><Link className="quiet-link" href="/news">Visit the education desk <span>↗</span></Link></div><div className="guidance-grid"><Link href="/admission" className="guidance-card guidance-admission"><span className="guidance-mark">01 / NEXT STEP</span><div className="guidance-decoration"><div className="guidance-arch"><i /><i /><i /></div><span className="guidance-person">◉</span></div><h3>Admission & course guidance</h3><p>Understand subject combinations, course choices and the steps ahead.</p><span className="guidance-link">Explore admission guide <b>↗</b></span></Link><Link href="/scholarships" className="guidance-card guidance-scholarship"><span className="guidance-mark">02 / OPPORTUNITY</span><div className="scholarship-decoration"><span>✦</span><i>₦</i><b>✳</b></div><h3>Scholarships & opportunities</h3><p>Browse education support and check details with the provider.</p><span className="guidance-link">Find opportunities <b>↗</b></span></Link><Link href="/news" className="guidance-card guidance-news"><span className="guidance-mark">03 / STAY INFORMED</span><div className="news-decoration"><div><span>THE</span><strong>STUDY<br />DESK</strong><small>LEARN · GROW · GO</small></div><span className="news-lines">{"///"}</span></div><h3>Study tips & education news</h3><p>Practical advice and useful updates, with clear links to official sources.</p><span className="guidance-link">Visit the education desk <b>↗</b></span></Link></div></section>
+
+    <section className="section section-trust"><div className="trust-quote-mark">“</div><div><span className="eyebrow">Built for real study days</span><h2>A good study plan should help you learn. It should also fit into your life.</h2><p>TUTOR-ME is designed for students, families and teachers who want a more thoughtful way to prepare for exams.</p></div><div className="trust-pillars"><div><span>01</span><strong>Clear, honest learning</strong><small>Know what’s a lesson, a demo or an official update.</small></div><div><span>02</span><strong>Progress at your pace</strong><small>Study on your schedule and return when you’re ready.</small></div><div><span>03</span><strong>Made for your next step</strong><small>Keep your exam and learning goals in focus.</small></div></div></section>
+
+    <CTA />
+  </main>;
 }

@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { Logo } from "@/components/site-header";
+
+export function SiteFooter() {
+  return <footer className="site-footer"><div className="footer-main"><div className="footer-about"><Logo inverse /><p>Clear lessons. Better practice. A more confident exam day.</p><span className="footer-location"><span className="location-dot" /> Made for learners across Nigeria</span></div><div className="footer-col"><h3>Prepare</h3><Link href="/jamb">JAMB</Link><Link href="/waec">WAEC</Link><Link href="/neco">NECO</Link><Link href="/bece">BECE</Link><Link href="/practice">Practice</Link></div><div className="footer-col"><h3>Discover</h3><Link href="/learn">Learning library</Link><Link href="/ai-tutor">Study companion</Link><Link href="/news">Education desk</Link><Link href="/admission">Admission guidance</Link><Link href="/scholarships">Scholarships</Link></div><div className="footer-col"><h3>Your account</h3><Link href="/signup">Get started</Link><Link href="/signin">Sign in</Link><Link href="/planner">Study planner</Link><Link href="/progress">Progress</Link></div></div><div className="footer-bottom"><span>© 2026 TUTOR-ME. Learning, one step at a time.</span><span>Independent exam preparation. Not affiliated with examination bodies.</span></div></footer>;
+}
