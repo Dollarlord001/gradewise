@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ProgressBar } from "@/components/ui";
 import { initialStudentState, practiceQuestions, studentSubjects, demoTopics, type StudentDemoState } from "@/lib/student-demo";
 import { MobileBottomNav } from "@/components/interactive-practice";
+import { signOutAction } from "@/app/actions/auth";
 
 export type WorkspaceMode = "dashboard" | "learn" | "practice" | "ai-tutor" | "mistake-bank" | "progress" | "planner";
 const storageKey = "tutor-me-student-demo-v1";
@@ -37,7 +38,7 @@ function PageTitle({ eyebrow, title, copy, aside }: { eyebrow: string; title: st
   return <div className="workspace-page-title"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div>{aside}</div>;
 }
 
-function DemoNotice() { return <div className="workspace-demo-notice"><span>i</span>Sample student view · Interactions stay in this browser and are not saved to an account.</div>; }
+function DemoNotice() { return <div className="workspace-demo-notice"><span>i</span>Some learning interactions are still local to this device. <form action={signOutAction}><button type="submit" className="quiet-link">Sign out</button></form></div>; }
 
 export function StudentWorkspace({ mode }: { mode: WorkspaceMode }) {
   const [student, setStudent, loaded] = useStudentState();

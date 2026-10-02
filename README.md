@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TUTOR-ME
 
-## Getting Started
+TUTOR-ME is an exam preparation platform for Nigerian students, built with Next.js 16, React and Supabase Auth/PostgreSQL. The repository name remains `gradewise` for history; the visible product is TUTOR-ME.
 
-First, run the development server:
+## Local development
 
-```bash
+Use Node.js 22 or newer and install dependencies with `npm install`. Copy `.env.example` to `.env.local`, then configure a dedicated Supabase development project. Account access remains unavailable until valid Supabase public configuration is supplied.
+
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Apply `supabase/migrations` using the Supabase CLI or your controlled migration workflow. Configure Upstash Redis before testing production-mode authentication rate limits.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` starts the Webpack development server.
+- `npm run lint` runs ESLint.
+- `TMPDIR=/tmp npm run build -- --webpack` builds for production with Webpack.
+- `npm start` serves the production build locally.
 
-## Learn More
+The workspace includes local learning interactions that are not yet account-backed. See `docs/ARCHITECTURE.md` for implemented boundaries and launch integrations that remain. The scale goals are engineering targets; no capacity result is claimed.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Read `docs/SECURITY.md` and `docs/LOAD_TESTING.md` before configuring or measuring a production deployment.
