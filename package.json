@@ -6,7 +6,18 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "content:discover": "node scripts/content-ops.mjs discover",
+    "content:download": "node scripts/content-ops.mjs download",
+    "content:extract": "node scripts/content-ops.mjs extract",
+    "content:normalize": "node scripts/content-ops.mjs normalize",
+    "content:dedupe": "node scripts/content-ops.mjs dedupe",
+    "content:import": "node scripts/content-pipeline.mjs import",
+    "content:validate": "node scripts/content-ops.mjs validate",
+    "content:build": "node scripts/content-pipeline.mjs build",
+    "content:publish": "node scripts/content-pipeline.mjs publish",
+    "content:report": "node scripts/content-ops.mjs report",
+    "test": "node --test tests/cbt/*.test.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "fixture-only-invalid-001",
+    "source": "FIXTURE",
+    "sourceName": "Automated test fixture",
+    "exam": "JAMB",
+    "year": 2024,
+    "subject": "Biology",
+    "questionNumber": 1,
+    "options": {"a": "Fixture option A"},
+    "correctAnswer": "z"
+  }
+]

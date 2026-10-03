@@ -1,0 +1,23 @@
+{
+  "totalQuestions": 0,
+  "canonicalQuestions": 0,
+  "byExam": {},
+  "bySubject": {},
+  "byYear": {},
+  "byExamSubjectYear": {},
+  "byTopic": {},
+  "topicMapped": 0,
+  "topicUnmapped": 0,
+  "mapping": {
+    "mapped": 0,
+    "unmapped": 0
+  },
+  "duplicatesRemoved": 0,
+  "rejected": 0,
+  "rejectedRows": [],
+  "quarantinedRightsReview": 0,
+  "usableQuestions": 0,
+  "usableFullJambPools": {},
+  "usablePracticePools": {},
+  "note": "Counts are based only on supplied staging files; source inventory entries are not imports."
+}

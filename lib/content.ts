@@ -49,13 +49,6 @@ export type Question = {
   provenance: { source: string; rights: "original" | "licensed" | "public-domain"; verified: boolean };
 };
 
-// Sample items are original demonstrations for interface development, not official past questions.
-export const sampleQuestion: Question = {
-  id: "demo-chem-001", exam: "JAMB", year: null, subject: "Chemistry", paper: "UTME practice", topic: "Organic Chemistry", subtopic: "Alkanes", difficulty: "medium", type: "multiple-choice",
-  prompt: "Which of the following is the general formula for an open-chain alkane?", options: ["CₙH₂ₙ", "CₙH₂ₙ₊₂", "CₙH₂ₙ₋₂", "CₙHₙ"], answerIndex: 1,
-  explanation: "Alkanes contain only single carbon–carbon bonds. For an open chain with n carbon atoms, the number of hydrogen atoms is 2n + 2.", objective: "Relate the molecular formula of an alkane to the number of carbon atoms.", provenance: { source: "TUTOR-ME original practice", rights: "original", verified: true },
-};
-
 export type StudyRecommendation = { title: string; reason: string; href: string; duration: string; kind: "lesson" | "practice" | "review" };
 
 export const nextActivity: StudyRecommendation = {

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fixture-only-001",
+    "source": "FIXTURE",
+    "sourceName": "Automated test fixture",
+    "exam": "JAMB",
+    "year": 2024,
+    "subject": "Biology",
+    "questionNumber": 1,
+    "prompt": "Fixture only: synthetic content for ingestion validation.",
+    "options": {"a": "Fixture option A", "b": "Fixture option B", "c": "Fixture option C", "d": "Fixture option D"},
+    "correctAnswer": "a"
+  }
+]
