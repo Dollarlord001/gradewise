@@ -1,0 +1,368 @@
+{
+  "totalResources": 14,
+  "productionReady": 14,
+  "bySubject": {
+    "Mathematics": 7,
+    "Physics": 4,
+    "Chemistry": 4,
+    "Biology": 2
+  },
+  "byLevel": {
+    "College / introductory biology": 1,
+    "College / introductory chemistry": 1,
+    "College / introductory mathematics": 1,
+    "College / introductory physics": 1,
+    "Grade 10": 3,
+    "Grade 11": 2,
+    "Grade 12": 2,
+    "Grade 7": 1,
+    "Grade 8": 1,
+    "Grade 9": 1
+  },
+  "byType": {
+    "open_textbook": 14
+  },
+  "byRightsStatus": {
+    "OPEN_LICENSE": 14
+  },
+  "withReaderAccess": 14,
+  "downloadPermitted": 10,
+  "missingSubjectLevelCoverage": [
+    {
+      "subject": "English Language",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Mathematics",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 7,
+      "requestedPerLevel": 5,
+      "status": "partial"
+    },
+    {
+      "subject": "Biology",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 2,
+      "requestedPerLevel": 5,
+      "status": "partial"
+    },
+    {
+      "subject": "Chemistry",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 4,
+      "requestedPerLevel": 5,
+      "status": "partial"
+    },
+    {
+      "subject": "Physics",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 4,
+      "requestedPerLevel": 5,
+      "status": "partial"
+    },
+    {
+      "subject": "Agricultural Science",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Economics",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Government",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Geography",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Literature in English",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Commerce",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "CRK",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Accounting",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Further Mathematics",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Computer Science",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Civic Education",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Animal Husbandry",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "IRK",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Arabic",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "History",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Home Economics",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Insurance",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Current Affairs",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Fine Art",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Music",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Hausa",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Igbo",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    },
+    {
+      "subject": "Yoruba",
+      "levels": [
+        "JSS",
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "available": 0,
+      "requestedPerLevel": 5,
+      "status": "missing"
+    }
+  ]
+}

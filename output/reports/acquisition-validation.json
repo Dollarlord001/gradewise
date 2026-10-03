@@ -1,0 +1,20 @@
+{
+  "passed": 9,
+  "checks": {
+    "acquisition": true,
+    "normalization": true,
+    "deduplication": true,
+    "rights": true,
+    "questionSchema": true,
+    "librarySchema": true,
+    "subjectFloorAudit": true,
+    "provenanceAudit": true,
+    "checkpointResumeTest": true
+  },
+  "questionCount": 5050,
+  "libraryCount": 14,
+  "duplicateCount": 122,
+  "rejectedCount": 72,
+  "quarantinedCount": 7,
+  "errors": []
+}

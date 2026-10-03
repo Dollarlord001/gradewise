@@ -1,0 +1,33 @@
+{
+  "source": "aloc-physics-jamb-batch-003.jsonl",
+  "endpointOrFilter": "local file (JSONL/NDJSON)",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 1,
+  "timestamp": "2026-10-03T20:28:57.843Z",
+  "recordsAcquired": 15,
+  "recordsAccepted": 177,
+  "recordsRejected": 6,
+  "recordsDuplicated": 72,
+  "apiCreditUsage": null,
+  "errorState": null,
+  "batchFiles": [
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-accounting-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-commerce-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-crk-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-economics-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-geography-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-government-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-mathematics-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-002.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-003.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-004.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-005.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-006.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-007.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-008.jsonl"
+  ],
+  "normalizedAt": "2026-10-03T20:28:58.208Z"
+}

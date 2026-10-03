@@ -1,0 +1,15 @@
+{
+  "source": "SdashAPI",
+  "endpointOrFilter": "https://sdashapi.com/api/v1/q?subject=yoruba&examType=jamb&limit=50",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 0,
+  "timestamp": "2026-10-03T20:18:53.244Z",
+  "recordsAcquired": 0,
+  "recordsAccepted": 0,
+  "recordsRejected": 0,
+  "recordsDuplicated": 0,
+  "apiCreditUsage": 0,
+  "errorState": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights.",
+  "status": "permanent_error",
+  "batchFiles": []
+}

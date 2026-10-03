@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-03",
+  "rightsEvidenceClass": "USER_PROVIDED_AUTHORIZED",
+  "sources": [
+    {
+      "sourceName": "ALOC / ALOC Station",
+      "status": "USER_PROVIDED_AUTHORIZED",
+      "evidence": "Authorization stated by the TUTOR-ME project owner in the content acquisition instructions.",
+      "acquisition": "Existing ALOC adapter and local snapshot; API key is environment supplied."
+    },
+    {
+      "sourceName": "Sdash",
+      "status": "USER_PROVIDED_AUTHORIZED",
+      "evidence": "Authorization stated by the TUTOR-ME project owner in the content acquisition instructions.",
+      "acquisition": "Existing Sdash adapter; API token is environment supplied. API v1 returns randomized batches without stable page cursors."
+    },
+    {
+      "sourceName": "AskQuestions.ng",
+      "status": "USER_PROVIDED_AUTHORIZED",
+      "evidence": "Authorization stated by the TUTOR-ME project owner in the content acquisition instructions.",
+      "acquisition": "No documented API, export, feed, file, endpoint, or credentials found in the repository; do not ingest until an official access method is identified."
+    },
+    {
+      "sourceName": "ExamVora",
+      "status": "USER_PROVIDED_AUTHORIZED",
+      "evidence": "Authorization stated by the TUTOR-ME project owner in the content acquisition instructions.",
+      "acquisition": "No documented API, export, feed, file, endpoint, or credentials found in the repository; do not ingest until an official access method is identified."
+    }
+  ]
+}

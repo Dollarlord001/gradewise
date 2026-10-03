@@ -1,0 +1,15 @@
+{
+  "source": "ALOC Station",
+  "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=civic%20education&examType=jamb&limit=15",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 0,
+  "timestamp": "2026-10-03T20:17:31.179Z",
+  "recordsAcquired": 0,
+  "recordsAccepted": 0,
+  "recordsRejected": 0,
+  "recordsDuplicated": 0,
+  "apiCreditUsage": 0,
+  "errorState": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights.",
+  "status": "permanent_error",
+  "batchFiles": []
+}

@@ -1,0 +1,511 @@
+{
+  "generatedAt": "2026-10-03T20:24:19.218Z",
+  "subjects": "requested subject list",
+  "boundedBatches": 56,
+  "outcomes": [
+    {
+      "provider": "aloc",
+      "subject": "accounting",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-accounting-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "agricultural science",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-agricultural-science-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "animal husbandry",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-animal-husbandry-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "arabic",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-arabic-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "biology",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-biology-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "chemistry",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-chemistry-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "civic education",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-civic-education-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "commerce",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-commerce-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "computer science",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-computer-science-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "crk",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-crk-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "current affairs",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-current-affairs-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "economics",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-economics-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "english language",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-english-language-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "fine art",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-fine-art-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "further mathematics",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-further-mathematics-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "geography",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-geography-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "government",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-government-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "hausa",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-hausa-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "history",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-history-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "home economics",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-home-economics-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "igbo",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-igbo-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "insurance",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-insurance-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "irk",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-irk-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "literature in english",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-literature-in-english-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "mathematics",
+      "status": "partial",
+      "records": 15,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/aloc-mathematics-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "music",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-music-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "aloc",
+      "subject": "physics",
+      "status": "partial",
+      "records": 120,
+      "apiCreditUsage": 8,
+      "checkpoint": "output/checkpoints/aloc-physics-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "aloc",
+      "subject": "yoruba",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/aloc-yoruba-jamb.json",
+      "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "accounting",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-accounting-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "agricultural science",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-agricultural-science-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "animal husbandry",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-animal-husbandry-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "arabic",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-arabic-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "biology",
+      "status": "complete",
+      "records": 50,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/sdash-biology-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "sdash",
+      "subject": "chemistry",
+      "status": "complete",
+      "records": 50,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/sdash-chemistry-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "sdash",
+      "subject": "civic education",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-civic-education-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "commerce",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-commerce-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "computer science",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-computer-science-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "crk",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-crk-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "current affairs",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-current-affairs-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "economics",
+      "status": "complete",
+      "records": 49,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/sdash-economics-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "sdash",
+      "subject": "english language",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-english-language-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 404); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "fine art",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-fine-art-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "further mathematics",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-further-mathematics-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "geography",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-geography-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "government",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-government-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "hausa",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-hausa-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "history",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-history-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "home economics",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-home-economics-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "igbo",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-igbo-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "insurance",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-insurance-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "irk",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-irk-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "literature in english",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-literature-in-english-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "mathematics",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-mathematics-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "music",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-music-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    },
+    {
+      "provider": "sdash",
+      "subject": "physics",
+      "status": "complete",
+      "records": 50,
+      "apiCreditUsage": 1,
+      "checkpoint": "output/checkpoints/sdash-physics-jamb.json",
+      "error": null
+    },
+    {
+      "provider": "sdash",
+      "subject": "yoruba",
+      "status": "error",
+      "records": 0,
+      "apiCreditUsage": 0,
+      "checkpoint": "output/checkpoints/sdash-yoruba-jamb.json",
+      "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+    }
+  ]
+}
