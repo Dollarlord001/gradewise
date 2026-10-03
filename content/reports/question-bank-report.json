@@ -17,7 +17,33 @@
   "rejectedRows": [],
   "quarantinedRightsReview": 0,
   "usableQuestions": 0,
-  "usableFullJambPools": {},
+  "usableFullJambPools": {
+    "Use of English": {
+      "required": 60,
+      "available": 0,
+      "sufficient": false
+    },
+    "Mathematics": {
+      "required": 40,
+      "available": 0,
+      "sufficient": false
+    },
+    "Biology": {
+      "required": 40,
+      "available": 0,
+      "sufficient": false
+    },
+    "Chemistry": {
+      "required": 40,
+      "available": 0,
+      "sufficient": false
+    },
+    "Physics": {
+      "required": 40,
+      "available": 0,
+      "sufficient": false
+    }
+  },
   "usablePracticePools": {},
   "note": "Counts are based only on supplied staging files; source inventory entries are not imports."
 }
