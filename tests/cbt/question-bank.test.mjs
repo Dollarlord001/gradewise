@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { buildFullForm, contentHash, dedupeQuestions, isRightsEligible, optionOrder, remainingSeconds, score, seededShuffle } from '../../lib/cbt/core.mjs';
 
 const q = (id, subject = 'Biology', extra = {}) => ({ id, exam: 'JAMB', examYear: 2024, subject, prompt: `Question ${id}: choose the correct biological process`, options: { a: 'One', b: 'Two', c: 'Three', d: 'Four' }, correctAnswer: 'b', verificationStatus: 'verified', rightsStatus: 'AUTHORIZED', source: 'OWNED', sourceId: id, ...extra });
@@ -56,4 +57,20 @@ test('scoring computes correct, incorrect and unanswered without inventing answe
   const result = score([q('a'), q('b')], { a: 'b', b: 'a' });
   assert.deepEqual(result, { correct: 1, incorrect: 1, unanswered: 0, score: 1 });
   assert.deepEqual(score([q('a')], {}), { correct: 0, incorrect: 0, unanswered: 1, score: 0 });
+});
+
+test('acquired ALOC bank creates a deterministic 180-question JAMB form from real staged rows', async () => {
+  const text = await readFile('content/staging/aloc-normalized.jsonl', 'utf8');
+  const bank = text.trim().split(/\r?\n/).map((line) => JSON.parse(line));
+  const subjects = ['Use of English', 'Biology', 'Chemistry', 'CRK'];
+  const pools = Object.fromEntries(subjects.map((subject) => [subject, bank.filter((row) => row.exam === 'JAMB' && row.subject === subject)]));
+  const first = buildFullForm(pools, subjects, 'aloc-bank-regression-seed');
+  const second = buildFullForm(pools, subjects, 'aloc-bank-regression-seed');
+  assert.equal(first.length, 180);
+  assert.deepEqual(first.map((row) => row.id), second.map((row) => row.id));
+  assert.equal(new Set(first.map((row) => row.id)).size, 180);
+  assert.deepEqual(subjects.map((subject) => first.filter((row) => row.subject === subject).length), [60, 40, 40, 40]);
+  assert.ok(first.every((row) => row.rightsStatus === 'USER_PROVIDED_AUTHORIZED' && row.verificationStatus === 'verified'));
+  assert.ok(first.every((row) => row.sourceMetadata.originalId != null && row.sourceId === `${row.sourceMetadata.originalTable}:${row.sourceMetadata.originalId}`));
+  assert.ok(first.some((row) => row.questionNumber === null), 'absent source question numbers remain absent');
 });

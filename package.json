@@ -10,6 +10,7 @@
     "content:discover": "node scripts/content-ops.mjs discover",
     "content:download": "node scripts/content-ops.mjs download",
     "content:extract": "node scripts/content-ops.mjs extract",
+    "content:extract:aloc": "node scripts/aloc-dump-extract.mjs",
     "content:normalize": "node scripts/content-ops.mjs normalize",
     "content:dedupe": "node scripts/content-ops.mjs dedupe",
     "content:import": "node scripts/content-pipeline.mjs import",

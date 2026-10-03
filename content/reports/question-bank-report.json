@@ -1,39 +1,668 @@
 {
-  "totalQuestions": 0,
-  "canonicalQuestions": 0,
-  "byExam": {},
-  "bySubject": {},
-  "byYear": {},
-  "byExamSubjectYear": {},
-  "byTopic": {},
+  "totalQuestions": 4797,
+  "acquiredQuestions": 4797,
+  "stagedQuestions": 4723,
+  "canonicalQuestions": 4723,
+  "acquiredByExam": {
+    "JAMB": 2883,
+    "NECO": 267,
+    "WAEC": 1647
+  },
+  "acquiredBySubject": {
+    "Accounting": 435,
+    "Biology": 384,
+    "CRK": 499,
+    "Chemistry": 304,
+    "Civic Education": 436,
+    "Commerce": 887,
+    "Economics": 473,
+    "Government": 524,
+    "Insurance": 100,
+    "Literature in English": 188,
+    "Use of English": 567
+  },
+  "byExam": {
+    "JAMB": 2842,
+    "NECO": 266,
+    "WAEC": 1615
+  },
+  "bySubject": {
+    "Biology": 380,
+    "CRK": 498,
+    "Chemistry": 302,
+    "Civic Education": 433,
+    "Commerce": 874,
+    "Economics": 466,
+    "Government": 506,
+    "Insurance": 99,
+    "Literature in English": 186,
+    "Principle of Accounts": 415,
+    "Use of English": 564
+  },
+  "byYear": {
+    "1988": 60,
+    "1989": 60,
+    "1990": 47,
+    "1997": 38,
+    "1999": 50,
+    "2000": 145,
+    "2001": 136,
+    "2002": 80,
+    "2003": 252,
+    "2004": 287,
+    "2005": 301,
+    "2006": 280,
+    "2007": 243,
+    "2008": 252,
+    "2009": 399,
+    "2010": 475,
+    "2011": 237,
+    "2012": 315,
+    "2013": 409,
+    "2014": 237,
+    "2015": 233,
+    "2016": 187
+  },
+  "byExamSubjectYear": {
+    "WAEC": {
+      "Principle of Accounts": {
+        "1997": 38,
+        "2006": 39,
+        "2012": 41,
+        "2013": 48,
+        "2014": 46,
+        "2015": 38
+      },
+      "Civic Education": {
+        "2011": 47,
+        "2012": 49,
+        "2013": 49,
+        "2014": 46,
+        "2015": 48,
+        "2016": 46
+      },
+      "Commerce": {
+        "1990": 47,
+        "2000": 49
+      },
+      "CRK": {
+        "2005": 50,
+        "2008": 49,
+        "2009": 50,
+        "2010": 50,
+        "2011": 50
+      },
+      "Economics": {
+        "2001": 45,
+        "2003": 48,
+        "2004": 43,
+        "2005": 48,
+        "2006": 49,
+        "2007": 50,
+        "2010": 40,
+        "2012": 45
+      },
+      "Literature in English": {
+        "2015": 48
+      },
+      "Government": {
+        "1988": 60,
+        "1989": 60,
+        "1999": 50,
+        "2000": 50
+      },
+      "Insurance": {
+        "2014": 50,
+        "2015": 49
+      }
+    },
+    "JAMB": {
+      "Principle of Accounts": {
+        "2004": 40,
+        "2007": 42,
+        "2009": 38,
+        "2016": 45
+      },
+      "Biology": {
+        "2003": 41,
+        "2004": 40,
+        "2005": 38,
+        "2006": 31,
+        "2007": 34,
+        "2008": 36,
+        "2009": 39,
+        "2010": 39,
+        "2011": 43,
+        "2012": 39
+      },
+      "Chemistry": {
+        "2001": 44,
+        "2002": 30,
+        "2003": 48,
+        "2004": 45,
+        "2005": 46,
+        "2006": 45,
+        "2010": 44
+      },
+      "Commerce": {
+        "2000": 46,
+        "2001": 47,
+        "2002": 50,
+        "2003": 45,
+        "2004": 50,
+        "2005": 49,
+        "2006": 47,
+        "2007": 48,
+        "2008": 49,
+        "2009": 48,
+        "2010": 49,
+        "2011": 47,
+        "2012": 49,
+        "2013": 48,
+        "2016": 46
+      },
+      "CRK": {
+        "2009": 50,
+        "2010": 50,
+        "2011": 50,
+        "2013": 49,
+        "2015": 50
+      },
+      "Economics": {
+        "2009": 50,
+        "2010": 48
+      },
+      "Use of English": {
+        "2003": 70,
+        "2004": 69,
+        "2005": 70,
+        "2006": 69,
+        "2007": 69,
+        "2008": 68,
+        "2009": 74,
+        "2010": 75
+      },
+      "Literature in English": {
+        "2008": 50,
+        "2009": 50,
+        "2010": 38
+      },
+      "Government": {
+        "2010": 42,
+        "2012": 42,
+        "2013": 49,
+        "2014": 45,
+        "2016": 50
+      }
+    },
+    "NECO": {
+      "Civic Education": {
+        "2012": 50,
+        "2013": 48,
+        "2014": 50
+      },
+      "Commerce": {
+        "2013": 60
+      },
+      "Government": {
+        "2013": 58
+      }
+    }
+  },
+  "byTopic": {
+    "Unmapped": 4723
+  },
   "topicMapped": 0,
-  "topicUnmapped": 0,
+  "topicUnmapped": 4723,
   "mapping": {
     "mapped": 0,
-    "unmapped": 0
+    "unmapped": 4723
   },
-  "duplicatesRemoved": 0,
-  "rejected": 0,
-  "rejectedRows": [],
-  "quarantinedRightsReview": 0,
-  "usableQuestions": 0,
-  "usableFullJambPools": {
-    "Use of English": {
-      "required": 60,
-      "available": 0,
-      "sufficient": false
+  "duplicatesRemoved": 69,
+  "duplicatesByReason": {
+    "exact content duplicate": 12,
+    "exact duplicate prompt": 4,
+    "near-duplicate prompt": 53
+  },
+  "rejected": 5,
+  "rejectedRows": [
+    {
+      "row": 585,
+      "id": "biology:150",
+      "issues": [
+        "answer does not match an option"
+      ]
     },
-    "Mathematics": {
+    {
+      "row": 966,
+      "id": "chemistry:147",
+      "issues": [
+        "answer does not match an option"
+      ]
+    },
+    {
+      "row": 1024,
+      "id": "chemistry:205",
+      "issues": [
+        "answer does not match an option"
+      ]
+    },
+    {
+      "row": 1648,
+      "id": "commerce:89",
+      "issues": [
+        "answer does not match an option"
+      ]
+    },
+    {
+      "row": 1660,
+      "id": "commerce:101",
+      "issues": [
+        "answer does not match an option",
+        "invalid year"
+      ]
+    }
+  ],
+  "duplicateRows": [
+    {
+      "row": 458,
+      "id": "biology:23",
+      "duplicateOf": "biology:22",
+      "reason": "exact duplicate prompt"
+    },
+    {
+      "row": 2947,
+      "id": "economics:186",
+      "duplicateOf": "economics:185",
+      "reason": "exact duplicate prompt"
+    },
+    {
+      "row": 4021,
+      "id": "englishlit:209",
+      "duplicateOf": "englishlit:204",
+      "reason": "exact duplicate prompt"
+    },
+    {
+      "row": 4024,
+      "id": "englishlit:212",
+      "duplicateOf": "englishlit:198",
+      "reason": "exact duplicate prompt"
+    },
+    {
+      "id": "accounting:181",
+      "duplicateOf": "f2d5aefb-99d6-54d4-9a05-37adc0635b00",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:199",
+      "duplicateOf": "40afab3b-1f1e-5775-b526-d8aa6fd78395",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:222",
+      "duplicateOf": "7836bbfc-d403-5131-82f6-f24b88a5252c",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:224",
+      "duplicateOf": "fc82def9-4f9b-5885-bcf0-d2c53dc22fcc",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:238",
+      "duplicateOf": "9eb814f1-0461-549c-a680-4f8258067c3f",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:239",
+      "duplicateOf": "b510cd61-5fc5-535a-bd82-82e57f48826b",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:247",
+      "duplicateOf": "5b13d6f2-31b1-53e0-9f9d-e9e2f48e6215",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:248",
+      "duplicateOf": "c8494f8e-02f1-5102-9879-d8795f41b807",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:261",
+      "duplicateOf": "27335224-0960-552a-b620-d4a9e403aa02",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:263",
+      "duplicateOf": "d9d67ce0-36b6-58fc-9e86-4b581c4c4e74",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:298",
+      "duplicateOf": "ea717e99-2e4b-57c0-9594-3dd93894296e",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:299",
+      "duplicateOf": "939375f6-e4e9-59f5-bab4-1938629a5c40",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:309",
+      "duplicateOf": "f2d5aefb-99d6-54d4-9a05-37adc0635b00",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:311",
+      "duplicateOf": "d9d67ce0-36b6-58fc-9e86-4b581c4c4e74",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:314",
+      "duplicateOf": "ddf1a51a-55df-57dc-8af9-56dfd7b5d0a3",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:330",
+      "duplicateOf": "9d6422b8-22aa-5c48-928c-3a04276d3e43",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:389",
+      "duplicateOf": "2e7253d4-b977-5773-866c-84c8262c44db",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:413",
+      "duplicateOf": "ee7fa022-90d5-58c1-aef3-6385c0f75e02",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "accounting:414",
+      "duplicateOf": "72cfa5f8-d58a-5545-990f-2b2ed256c819",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "accounting:501",
+      "duplicateOf": "dd30d9ed-db3d-5b69-aba9-cc97090648e4",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "biology:264",
+      "duplicateOf": "fe4d7115-d8d4-5e78-9abe-0e7a1e72e684",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "biology:309",
+      "duplicateOf": "f46cecea-7ddd-5556-9d29-fca37caa1ec2",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "civiledu:244",
+      "duplicateOf": "8fe3ad10-0d9d-5b7c-9122-52889c1eb851",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "civiledu:272",
+      "duplicateOf": "37317183-ebb7-5e45-a149-ee2270921423",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "civiledu:296",
+      "duplicateOf": "0348f816-2b89-522f-9571-7b0b4183e3a6",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:211",
+      "duplicateOf": "1438c49f-ea2f-5f9c-9e98-4f984b0b4766",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:344",
+      "duplicateOf": "c72775a0-0826-5eb9-b147-0239e7d2df56",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:496",
+      "duplicateOf": "cad659ed-a78d-5494-b379-dbc7628350c4",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:613",
+      "duplicateOf": "792b91bf-f77a-55e6-90c4-6e51bebbd563",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:675",
+      "duplicateOf": "f05a4f22-f5a0-5ea2-86d2-0539e8eefc8c",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:694",
+      "duplicateOf": "a2ecc484-57c7-5d4e-bc33-9a63a72caa0e",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:713",
+      "duplicateOf": "cefdf617-ef45-5fa9-8da7-588945650438",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:776",
+      "duplicateOf": "05305dc7-9b2f-5a84-a8fd-497eecf86a8e",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:840",
+      "duplicateOf": "7a5a87e4-3efb-53c3-a661-daee54107df4",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:869",
+      "duplicateOf": "e7e72968-b144-58ed-9355-1d07fbbb84e1",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "commerce:885",
+      "duplicateOf": "1e4f36e2-1272-5a3d-b493-37a8f931f975",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "crk:358",
+      "duplicateOf": "4c05bc8c-b7fc-51e0-b96c-88f3ba97ac48",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "economics:434",
+      "duplicateOf": "065420ce-9d51-5094-be61-f520c3ad37d0",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "economics:456",
+      "duplicateOf": "954fb017-7d66-56d4-b13e-0d6339632dd3",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "economics:465",
+      "duplicateOf": "dcecca9c-0cf0-5dc0-aedc-b199962bf81c",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "economics:491",
+      "duplicateOf": "295ddb9e-cdef-5d60-b880-5c17a7a15aa7",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "economics:499",
+      "duplicateOf": "7bf76c33-0902-559c-89dd-694adda44c78",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "economics:526",
+      "duplicateOf": "deb9c8b4-622f-5d8d-80ec-82ea0c593a13",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "english:223",
+      "duplicateOf": "b015b982-cf87-58f8-9b33-4775b84e97a3",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "english:255",
+      "duplicateOf": "5abd1ec8-7110-5d38-99f0-207f2dd18276",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "english:438",
+      "duplicateOf": "5fe9eca8-5b71-5c32-99a2-418971102115",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:421",
+      "duplicateOf": "c57aebba-5120-5311-a005-0b45c6417f50",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:423",
+      "duplicateOf": "5e6fc9d0-0740-542b-8599-95dca4e46005",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:430",
+      "duplicateOf": "cd5e0612-8f93-5d8c-a380-139381add373",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:431",
+      "duplicateOf": "d019b787-abbf-50bd-bb9a-9f96a90d1d47",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:432",
+      "duplicateOf": "96509cdc-6882-52f4-9b14-e431bbe4eb46",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:441",
+      "duplicateOf": "7ec4535f-cb64-5603-ae6f-9bbb978ea7d0",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:446",
+      "duplicateOf": "cb746fe7-af54-5be0-9685-30508697a131",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:459",
+      "duplicateOf": "01757146-b067-5411-a334-047bde49317f",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:460",
+      "duplicateOf": "14845b3f-69e6-5015-a10d-157f7ea042fe",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:462",
+      "duplicateOf": "0119d322-6019-5e2b-8714-eda031222034",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:465",
+      "duplicateOf": "a3814de4-d3eb-5dc2-a906-a99f6b0271cb",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:477",
+      "duplicateOf": "911fa012-ff05-569f-9be9-055b1eedc8d9",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:486",
+      "duplicateOf": "3d7c88a1-aa0f-5d4d-b7cf-f4bbbde3ac84",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:493",
+      "duplicateOf": "f5bde8e3-5e15-5394-b5b0-c64faf4ef21c",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:555",
+      "duplicateOf": "feabe1cb-18a2-5042-afd8-dae87116e705",
+      "reason": "near-duplicate prompt"
+    },
+    {
+      "id": "government:557",
+      "duplicateOf": "7a22971e-785c-5c0d-aa30-4e7f6edc1a82",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:568",
+      "duplicateOf": "5c86e4da-0c6b-5357-b749-59c47185a9a2",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "government:570",
+      "duplicateOf": "bda2eced-6266-5027-8c43-cf76212775cc",
+      "reason": "exact content duplicate"
+    },
+    {
+      "id": "insurance:327",
+      "duplicateOf": "d6e5f79d-3032-53f5-8412-7ee33c162adc",
+      "reason": "near-duplicate prompt"
+    }
+  ],
+  "quarantinedRightsReview": 0,
+  "usableQuestions": 4723,
+  "usableFullJambPools": {
+    "Principle of Accounts": {
       "required": 40,
-      "available": 0,
-      "sufficient": false
+      "available": 165,
+      "sufficient": true
     },
     "Biology": {
       "required": 40,
-      "available": 0,
-      "sufficient": false
+      "available": 380,
+      "sufficient": true
     },
     "Chemistry": {
+      "required": 40,
+      "available": 302,
+      "sufficient": true
+    },
+    "Commerce": {
+      "required": 40,
+      "available": 718,
+      "sufficient": true
+    },
+    "CRK": {
+      "required": 40,
+      "available": 249,
+      "sufficient": true
+    },
+    "Economics": {
+      "required": 40,
+      "available": 98,
+      "sufficient": true
+    },
+    "Use of English": {
+      "required": 60,
+      "available": 564,
+      "sufficient": true
+    },
+    "Literature in English": {
+      "required": 40,
+      "available": 138,
+      "sufficient": true
+    },
+    "Government": {
+      "required": 40,
+      "available": 228,
+      "sufficient": true
+    },
+    "Mathematics": {
       "required": 40,
       "available": 0,
       "sufficient": false
@@ -44,6 +673,34 @@
       "sufficient": false
     }
   },
-  "usablePracticePools": {},
-  "note": "Counts are based only on supplied staging files; source inventory entries are not imports."
+  "usablePracticePools": {
+    "JAMB:Principle of Accounts": 165,
+    "JAMB:Biology": 380,
+    "JAMB:Chemistry": 302,
+    "JAMB:Commerce": 718,
+    "JAMB:CRK": 249,
+    "JAMB:Economics": 98,
+    "JAMB:Use of English": 564,
+    "JAMB:Literature in English": 138,
+    "JAMB:Government": 228,
+    "WAEC:Principle of Accounts": 250,
+    "WAEC:Civic Education": 285,
+    "WAEC:Commerce": 96,
+    "WAEC:CRK": 249,
+    "WAEC:Economics": 368,
+    "WAEC:Literature in English": 48,
+    "WAEC:Government": 220,
+    "WAEC:Insurance": 99,
+    "NECO:Civic Education": 148,
+    "NECO:Commerce": 60,
+    "NECO:Government": 58
+  },
+  "fullJambFormPossible": true,
+  "fullJambSubjectCombination": [
+    "Use of English",
+    "Biology",
+    "CRK",
+    "Chemistry"
+  ],
+  "note": "Acquired counts read content/acquired; canonical and usability counts read content/staging. Rights and provenance fields are internal."
 }

@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { createClient } from "@supabase/supabase-js";
+import { dedupeQuestions } from "../lib/cbt/core.mjs";
 
 const args = Object.fromEntries(process.argv.slice(2).flatMap((part, i, all) => part.startsWith("--") ? [[part.slice(2), all[i + 1]?.startsWith("--") ? "true" : all[i + 1]]] : []));
 const command = process.argv[2] && !process.argv[2].startsWith("--") ? process.argv[2] : "validate";
@@ -28,14 +29,16 @@ export class QuestionSourceAdapter {
   async fetchQuestions() { throw new Error("QuestionSourceAdapter.fetchQuestions must be implemented"); }
 }
 export class ALOCQuestionSource extends QuestionSourceAdapter {
-  async fetchQuestions({ subject, exam = "jamb", year }) {
+  async fetchQuestions({ subject, exam = "jamb", year, limit = 120 }) {
     const key = process.env.ALOC_API_KEY; if (!key) throw new Error("ALOC_API_KEY is not configured.");
     if (!subject && !year) throw new Error("ALOC import requires a subject or year filter.");
-    const url = new URL("https://dev.aloc.com.ng/api/v1/questions"); url.searchParams.set("examType", exam.toLowerCase()); url.searchParams.set("country", "NG"); url.searchParams.set("limit", "50");
+    const batchSize = Math.min(120, Math.max(1, Number(limit) || 120));
+    const url = new URL(`https://questions.aloc.com.ng/api/v2/m/${batchSize}`); url.searchParams.set("type", exam.toLowerCase()); url.searchParams.set("random", "false"); url.searchParams.set("withComprehension", "true");
     if (subject) url.searchParams.set("subject", subject.toLowerCase()); if (year) url.searchParams.set("year", String(year));
-    const rows = []; let cursor;
-    do { if (cursor) url.searchParams.set("cursor", cursor); const response = await fetch(url, { headers: { "X-API-Key": key } }); if (!response.ok) throw new Error(`ALOC request failed (${response.status}).`); const body = await response.json(); rows.push(...(body.data ?? [])); cursor = body.pagination?.hasMore ? body.pagination.nextCursor : null; } while (cursor && rows.length < 5000);
-    return rows.map((q, i) => ({ ...q, source: "ALOC", sourceName: "ALOC", sourceUrl: "https://aloc.com.ng/docs/questions", sourceId: String(q.id), exam: exam.toUpperCase(), year: Number(q.year), subject: q.subject, questionNumber: i + 1, prompt: q.text, correctAnswer: q.correctAnswer, explanation: q.explanation ?? null, topic: q.topic ?? null, subtopic: q.subtopic ?? null, options: q.options }));
+    const response = await fetch(url, { headers: { AccessToken: key } });
+    if (!response.ok) throw new Error(`ALOC API request failed (${response.status}); check ALOC_API_KEY and filters.`);
+    const body = await response.json(); const rows = Array.isArray(body.data) ? body.data : body.data ? [body.data] : [];
+    return rows.map((q) => ({ source: "ALOC", sourceName: "ALOC question database", sourceUrl: url.toString(), sourceId: `${subject ?? q.subject}:${q.id}`, exam: ({ utme: "JAMB", jamb: "JAMB", waec: "WAEC", wassce: "WAEC", neco: "NECO" })[String(q.examtype ?? exam).toLowerCase()] ?? String(q.examtype ?? exam).toUpperCase(), year: q.examyear ?? year ?? null, subject: q.subject ?? subject, questionNumber: q.questionNub ?? null, prompt: q.question, correctAnswer: q.answer, explanation: q.solution || null, options: q.option, passage: q.section || null, images: q.image ? [q.image] : [], sourceMetadata: q }));
   }
 }
 export class SdashQuestionSource extends QuestionSourceAdapter {
@@ -58,25 +61,34 @@ if (command === "publish") {
   console.log("Published one reviewed question. The JAMB content version was incremented so devices refresh their cached question content silently."); process.exit(0);
 }
 
-function normalize(raw, i) {
+function normalize(raw) {
   const source = String(raw.source ?? args.provider ?? "FILE").toUpperCase(); const sourceName = raw.sourceName ?? (source === "SDASH" ? "SdashAPI" : source === "ALOC" ? "ALOC" : "Local source");
   const sourceId = String(raw.sourceId ?? raw.source_id ?? raw.id ?? "").trim(); const prompt = String(raw.prompt ?? raw.text ?? raw.question ?? "").trim();
   let options = raw.options ?? raw.option; if (typeof options === "string") { try { options = JSON.parse(options); } catch { options = null; } }
   if (Array.isArray(options)) options = Object.fromEntries(options.map((o, index) => [String.fromCharCode(97 + index), typeof o === "string" ? o : o.text]));
   if (options && typeof options === "object") options = Object.fromEntries(Object.entries(options).map(([key, value]) => [key.toLowerCase(), value]));
   const answer = String(raw.correctAnswer ?? raw.correct_answer ?? raw.answer ?? "").trim().toLowerCase();
-  const year = Number(raw.year ?? raw.examYear ?? raw.examyear ?? args.year);
-  return { id: stableUuid(`${source}:${sourceId}`), source, sourceName, sourceId, sourceUrl: clean(raw.sourceUrl ?? raw.source_url) ?? null, exam: String(raw.exam ?? args.exam ?? "JAMB").toUpperCase(), year, subject: canonicalSubject(raw.subject ?? args.subject), paper: raw.paper ?? null, questionNumber: Number(raw.questionNumber ?? raw.question_number ?? i + 1), prompt, options: options && typeof options === "object" ? options : {}, correctAnswer: answer, explanation: clean(raw.explanation ?? raw.solution) || null, questionType: raw.questionType ?? "multiple_choice", topic: clean(raw.topic) || null, subtopic: clean(raw.subtopic) || null, syllabusObjective: clean(raw.syllabusObjective) || null, difficulty: Number(raw.difficulty) || null, images: raw.images ?? (raw.image ? [raw.image] : []), passage: raw.passage ?? null, verificationStatus: "pending", rightsStatus: "unknown", rightsEvidence: null, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() };
+  const yearValue = raw.year ?? raw.examYear ?? raw.examyear ?? args.year; const year = yearValue == null || yearValue === "" ? null : Number(yearValue);
+  const questionNumberValue = raw.questionNumber ?? raw.question_number; const questionNumber = questionNumberValue == null || questionNumberValue === "" ? null : Number(questionNumberValue);
+  const sourceMetadata = raw.sourceMetadata ?? raw.source_metadata ?? {};
+  const sourceAnswerExists = Boolean(sourceMetadata?.originalFields?.answer ?? sourceMetadata?.answer);
+  const verificationStatus = raw.verificationStatus ?? (args["source-answer-verified"] === "true" && sourceAnswerExists ? "verified" : "pending");
+  const rightsStatus = String(raw.rightsStatus ?? args["rights-status"] ?? "unknown");
+  const rightsEvidence = clean(raw.rightsEvidence ?? args["rights-evidence"]) || null;
+  return { id: stableUuid(`${source}:${sourceId}`), source, sourceName, sourceId, sourceUrl: clean(raw.sourceUrl ?? raw.source_url) ?? null, exam: String(raw.exam ?? args.exam ?? "JAMB").toUpperCase(), year, subject: canonicalSubject(raw.subject ?? args.subject), paper: raw.paper ?? null, questionNumber, prompt, options: options && typeof options === "object" ? options : {}, correctAnswer: answer, explanation: clean(raw.explanation ?? raw.solution) || null, questionType: raw.questionType ?? "multiple_choice", topic: clean(raw.topic) || null, subtopic: clean(raw.subtopic) || null, syllabusObjective: clean(raw.syllabusObjective) || null, difficulty: Number(raw.difficulty) || null, images: raw.images ?? (raw.image ? [raw.image] : []), passage: raw.passage ?? null, sourceMetadata, verificationStatus, verificationEvidence: verificationStatus === "verified" ? "Source answer key retained and checked for a matching option by the import validator; semantic correctness was not independently re-reviewed." : null, rightsStatus, rightsEvidence, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() };
 }
 function validate(rows) {
-  const rejected = [], accepted = [], ids = new Set(), prompts = new Map();
+  const rejected = [], duplicates = [], accepted = [], ids = new Map(), prompts = new Map();
   for (const [i, q] of rows.entries()) {
-    const issues = []; if (!q.prompt) issues.push("missing prompt"); const opts = Object.entries(q.options); if (opts.length < 2 || opts.some(([, text]) => !String(text).trim())) issues.push("missing/invalid options"); if (!q.correctAnswer || !Object.hasOwn(q.options, q.correctAnswer)) issues.push("answer does not match an option"); if (!q.subject) issues.push("missing subject"); if (!q.exam) issues.push("missing exam"); if (!Number.isInteger(q.year) || q.year < 1900 || q.year > new Date().getFullYear() + 1) issues.push("invalid year"); if (!q.sourceId) issues.push("missing stable source ID");
-    const key = `${q.source}:${q.sourceId}`; const normalized = promptKey(q.prompt); if (ids.has(key)) issues.push("duplicate provider ID"); if (prompts.has(normalized)) issues.push(`exact duplicate prompt of row ${prompts.get(normalized) + 1}`);
-    if (normalized && !prompts.has(normalized)) { const words = new Set(normalized.split(" ").filter((word) => word.length > 2)); for (let j = 0; j < accepted.length && !issues.some((issue) => issue.startsWith("near-duplicate")); j++) { const previous = accepted[j]; if (q.exam !== previous.exam || q.subject !== previous.subject || q.year !== previous.year) continue; const other = new Set(promptKey(previous.prompt).split(" ").filter((word) => word.length > 2)); const overlap = [...words].filter((word) => other.has(word)).length; const similarity = overlap / Math.max(1, new Set([...words, ...other]).size); if (similarity >= 0.92 && words.size > 5) issues.push(`near-duplicate prompt of row ${j + 1}`); } }
-    if (issues.length) rejected.push({ row: i + 1, sourceId: q.sourceId, issues }); else { ids.add(key); prompts.set(normalized, i); accepted.push(q); }
+    const issues = []; if (!q.prompt) issues.push("missing prompt"); const opts = Object.entries(q.options); if (opts.length < 2 || opts.some(([, text]) => !String(text).trim())) issues.push("missing/invalid options"); if (!q.correctAnswer || !Object.hasOwn(q.options, q.correctAnswer)) issues.push("answer does not match an option"); if (!q.subject) issues.push("missing subject"); if (!q.exam) issues.push("missing exam"); if (q.year != null && (!Number.isInteger(q.year) || q.year < 1900 || q.year > new Date().getFullYear() + 1)) issues.push("invalid year"); if (!q.sourceId) issues.push("missing stable source ID"); if (q.questionNumber != null && (!Number.isInteger(q.questionNumber) || q.questionNumber < 1 || q.questionNumber > 32767)) issues.push("invalid question number");
+    const key = `${q.source}:${q.sourceId}`; const normalized = promptKey(q.prompt);
+    if (issues.length) { rejected.push({ ...q, importRow: i + 1, issues }); continue; }
+    const duplicateOf = ids.get(key) ?? prompts.get(`${q.exam}|${q.subject}|${q.year}|${normalized}`);
+    if (duplicateOf) { duplicates.push({ ...q, importRow: i + 1, duplicateOf, duplicateReason: ids.has(key) ? "duplicate provider ID" : "exact duplicate prompt" }); continue; }
+    if (normalized) { const words = new Set(normalized.split(" ").filter((word) => word.length > 2)); let nearDuplicateOf = null; for (let j = 0; j < accepted.length && !nearDuplicateOf; j++) { const previous = accepted[j]; if (q.exam !== previous.exam || q.subject !== previous.subject || q.year !== previous.year) continue; const other = new Set(promptKey(previous.prompt).split(" ").filter((word) => word.length > 2)); const overlap = [...words].filter((word) => other.has(word)).length; if (words.size > 5 && overlap / Math.max(1, new Set([...words, ...other]).size) >= 0.92) nearDuplicateOf = previous.sourceId; } if (nearDuplicateOf) { duplicates.push({ ...q, importRow: i + 1, duplicateOf: nearDuplicateOf, duplicateReason: "near-duplicate prompt" }); continue; } }
+    ids.set(key, q.sourceId); prompts.set(`${q.exam}|${q.subject}|${q.year}|${normalized}`, q.sourceId); accepted.push(q);
   }
-  return { accepted, rejected };
+  return { accepted, rejected, duplicates };
 }
 const staging = resolve(args.output ?? "content/staging/normalized.jsonl");
 let rows;
@@ -88,11 +100,16 @@ else if (["import", "build"].includes(command)) {
   rows = await adapter.fetchQuestions({ subject: args.subject, exam: args.exam, year: args.year, limit: args.limit });
 } else throw new Error("Supply --file or use import/build with a provider and filters.");
 
-const canonical = rows.map(normalize); const { accepted, rejected } = validate(canonical);
-console.log(JSON.stringify({ fetched: canonical.length, accepted: accepted.length, rejected: rejected.length, rejectionDetails: rejected.slice(0, 30) }, null, 2));
+const canonical = rows.map(normalize); const { accepted, rejected, duplicates } = validate(canonical);
+const deduped = dedupeQuestions(accepted); const acceptedById = new Map(accepted.map((q) => [q.id, q]));
+const dedupeDuplicates = deduped.duplicates.map((item) => ({ ...(acceptedById.get(item.duplicateId) ?? {}), sourceId: item.sourceId, duplicateOf: item.canonicalId, duplicateReason: item.duplicateReason }));
+const duplicateRows = [...duplicates, ...dedupeDuplicates];
+console.log(JSON.stringify({ fetched: canonical.length, validated: accepted.length, accepted: deduped.canonical.length, duplicates: duplicateRows.length, rejected: rejected.length, duplicateDetails: duplicateRows.slice(0, 12).map(({ sourceId, duplicateOf, duplicateReason }) => ({ sourceId, duplicateOf, duplicateReason })), rejectionDetails: rejected.slice(0, 30).map(({ sourceId, issues }) => ({ sourceId, issues })) }, null, 2));
 if (command === "validate") process.exit(rejected.length ? 1 : 0);
-await mkdir(dirname(staging), { recursive: true }); await writeFile(staging, accepted.map((q) => JSON.stringify(q)).join("\n") + (accepted.length ? "\n" : ""));
-console.log(`Normalized staging written to ${staging}. Rows remain pending rights and answer verification.`);
+await mkdir(dirname(staging), { recursive: true }); await writeFile(staging, deduped.canonical.map((q) => JSON.stringify(q)).join("\n") + (deduped.canonical.length ? "\n" : ""));
+await writeFile(staging.replace(/\.(jsonl|ndjson|json)$/i, ".rejected.jsonl"), rejected.map((q) => JSON.stringify(q)).join("\n") + (rejected.length ? "\n" : ""));
+await writeFile(staging.replace(/\.(jsonl|ndjson|json)$/i, ".duplicates.jsonl"), duplicateRows.map((q) => JSON.stringify(q)).join("\n") + (duplicateRows.length ? "\n" : ""));
+console.log(`Canonical staging written to ${staging}; ${duplicateRows.length} duplicate rows and ${rejected.length} invalid rows were written to review sidecars.`);
 if (command === "build") process.exit(0);
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL; const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -100,7 +117,7 @@ if (!url || !key) throw new Error("Supabase storage unavailable: set NEXT_PUBLIC
 const supabase = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
 const databaseAccepted = []; const crossProviderDuplicates = [];
 const contentGroups = new Map();
-for (const q of accepted) { const key = `${q.exam}|${q.year}|${q.subject}`; const group = contentGroups.get(key) ?? []; group.push(q); contentGroups.set(key, group); }
+for (const q of deduped.canonical) { const key = `${q.exam}|${q.year}|${q.subject}`; const group = contentGroups.get(key) ?? []; group.push(q); contentGroups.set(key, group); }
 for (const group of contentGroups.values()) {
   const first = group[0]; const candidates = [];
   for (let offset = 0; offset < 10000; offset += 1000) { const { data, error } = await supabase.from("questions").select("source,source_id,prompt").eq("exam", first.exam).eq("year", first.year).eq("subject", first.subject).range(offset, offset + 999); if (error) throw new Error(`Duplicate lookup failed: ${error.message}`); candidates.push(...(data ?? [])); if ((data ?? []).length < 1000) break; }
@@ -111,6 +128,6 @@ for (const group of contentGroups.values()) {
   }
 }
 console.log(`Database duplicate check: ${crossProviderDuplicates.length} records matched existing prompts and were rejected.`);
-const dbRows = databaseAccepted.map((q) => ({ id: q.id, exam: q.exam, year: q.year, subject: q.subject, paper: q.paper, question_number: q.questionNumber, prompt: q.prompt, question_type: q.questionType, difficulty: q.difficulty, options: q.options, correct_answer: q.correctAnswer, explanation: q.explanation, source_name: q.sourceName, source_url: q.sourceUrl, source: q.source, source_id: q.sourceId, provenance: { source: q.source, sourceId: q.sourceId, questionNumber: q.questionNumber }, rights_status: "unknown", verification_status: "pending", subtopic: q.subtopic, syllabus_objective: q.syllabusObjective, images: q.images, passage: q.passage, rights_evidence: null }));
+const dbRows = databaseAccepted.map((q) => ({ id: q.id, exam: q.exam, year: q.year, subject: q.subject, paper: q.paper, question_number: q.questionNumber, prompt: q.prompt, question_type: q.questionType, difficulty: q.difficulty, options: q.options, correct_answer: q.correctAnswer, explanation: q.explanation, source_name: q.sourceName, source_url: q.sourceUrl, source: q.source, source_id: q.sourceId, provenance: { source: q.source, sourceId: q.sourceId, questionNumber: q.questionNumber, rightsStatus: q.rightsStatus, rightsEvidence: q.rightsEvidence, sourceMetadata: q.sourceMetadata, verificationEvidence: q.verificationEvidence }, rights_status: q.rightsStatus === "USER_PROVIDED_AUTHORIZED" ? "permission_granted" : q.rightsStatus.toLowerCase(), verification_status: q.verificationStatus, subtopic: q.subtopic, syllabus_objective: q.syllabusObjective, images: q.images, passage: q.passage, rights_evidence: q.rightsEvidence }));
 for (let i = 0; i < dbRows.length; i += 500) { const { error } = await supabase.from("questions").upsert(dbRows.slice(i, i + 500), { onConflict: "source,source_id" }); if (error) throw new Error(`Database import failed: ${error.message}`); }
-console.log(`Stored ${dbRows.length} records as pending review. None are available to students until rights and answer verification are approved.`);
+console.log(`Stored ${dbRows.length} canonical records. Rights status is ${[...new Set(databaseAccepted.map((q) => q.rightsStatus))].join(', ') || 'not set'}; verification statuses: ${JSON.stringify(Object.fromEntries([...new Set(databaseAccepted.map((q) => q.verificationStatus))].map((status) => [status, databaseAccepted.filter((q) => q.verificationStatus === status).length])))}.`);

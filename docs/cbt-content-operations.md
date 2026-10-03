@@ -6,6 +6,17 @@ Student CBT content is read from verified, rights-cleared rows in `public.questi
 
 Configure `ALOC_API_KEY` or `SDASH_API_KEY` in the server environment. The database import also needs `NEXT_PUBLIC_SUPABASE_URL` and the server-only `SUPABASE_SERVICE_ROLE_KEY`.
 
+The ALOC source repository includes dated MySQL backups under `storage/backups/`. To extract its latest checked-in snapshot without importing unrelated API telemetry, run:
+
+```sh
+npm run content:extract:aloc -- /path/to/aloc-endpoints/storage/backups/2020-08-20.sql
+npm run content:build -- --file content/acquired/aloc-2020-08-20.jsonl --output content/staging/aloc-normalized.jsonl --rights-status USER_PROVIDED_AUTHORIZED --rights-evidence 'Explicit permission obtained by TUTOR-ME project owner from the ALOC/project owner for use of the question database in TUTOR-ME.' --source-answer-verified true
+```
+
+With the existing server-only Supabase URL and service-role key configured, the same acquired data can be batch-upserted into TUTOR-ME's question table using `npm run content:import -- --file content/acquired/aloc-2020-08-20.jsonl` with the same rights and answer flags. Imports are written in batches of 500 and deduplicated against existing rows before upsert.
+
+The extractor uses only tables with exam question fields and maps UTME/JAMB, WAEC/WASSCE, and NECO. It preserves original table and row IDs in `sourceId` and `sourceMetadata`, retains raw SQL row fields internally, and does not synthesize absent question numbers. `source-answer-verified` means the imported ALOC answer key passed TUTOR-ME's option-membership validation; it does not claim a separate semantic re-review. The user-provided rights status is retained in the staging row and provenance, and maps to the existing `permission_granted` database access status.
+
 ```sh
 npm run content:import -- --provider aloc --exam jamb --subject biology --year 2023
 npm run content:import -- --provider sdash --exam utme --subject biology --year 2023 --limit 50
