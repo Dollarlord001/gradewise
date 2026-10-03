@@ -29,7 +29,7 @@ if (cmd === 'discover') {
   await mkdir(dirname(path), { recursive: true }); await writeFile(path, bytes, { flag: 'wx' }).catch(async (error) => { if (error.code !== 'EEXIST') throw error; });
   console.log(JSON.stringify({ sourceName: entry.sourceName, path, bytes: bytes.length }, null, 2));
 } else if (cmd === 'extract') {
-  const input = resolve(String(flags.file ?? ''));
+  const input = resolve(String(flags.file ?? 'content/acquired/aloc-2020-08-20.jsonl'));
   const ext = extname(input).toLowerCase(); let rows;
   if (['.json', '.jsonl', '.ndjson', '.csv'].includes(ext)) rows = await readRows(input);
   else if (ext === '.html' || ext === '.htm') {
@@ -44,7 +44,7 @@ if (cmd === 'discover') {
   } else throw new Error('Supported extraction formats: HTML, PDF, JSON, CSV, JSONL.');
   console.log(JSON.stringify({ records: rows.length, recordsWithPrompt: rows.filter((row) => row.prompt || row.question || row.text).length }, null, 2));
 } else if (cmd === 'normalize' || cmd === 'dedupe' || cmd === 'validate') {
-  const input = resolve(String(flags.file ?? ''));
+  const input = resolve(String(flags.file ?? 'content/acquired/aloc-2020-08-20.jsonl'));
   const rows = await readRows(input);
   const normalized = rows.map((raw, index) => {
     const optionsRaw = raw.options ?? raw.option ?? {};
@@ -70,7 +70,12 @@ if (cmd === 'discover') {
   if (cmd === 'validate' && rejected.length) process.exitCode = 1;
 } else if (cmd === 'report') {
   const directory = resolve(flags.directory ?? 'content/staging'); const names = await files(directory); const all = []; const rejectedSidecars = []; const duplicateSidecars = [];
-  for (const file of names.filter((name) => ['.jsonl','.ndjson','.json'].includes(extname(name)))) {
+  const dataFiles = names.filter((name) => ['.jsonl','.ndjson','.json'].includes(extname(name)));
+  const canonicalStaging = dataFiles.find((name) => /aloc-normalized\.jsonl$/i.test(name));
+  const reportFiles = canonicalStaging
+    ? dataFiles.filter((name) => name === canonicalStaging || /\.(rejected|duplicates)\.(jsonl|ndjson)$/i.test(name))
+    : dataFiles.filter((name) => !/(^|\/)(validate|normalize|dedupe)\.(jsonl|ndjson|json)$/i.test(name));
+  for (const file of reportFiles) {
     if (/\.rejected\.(jsonl|ndjson)$/i.test(file)) rejectedSidecars.push(...await readRows(file));
     else if (/\.duplicates\.(jsonl|ndjson)$/i.test(file)) duplicateSidecars.push(...await readRows(file));
     else all.push(...await readRows(file));

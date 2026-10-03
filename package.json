@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "content:discover": "node scripts/content-ops.mjs discover",
@@ -14,6 +14,7 @@
     "content:normalize": "node scripts/content-ops.mjs normalize",
     "content:dedupe": "node scripts/content-ops.mjs dedupe",
     "content:import": "node scripts/content-pipeline.mjs import",
+    "content:import:catalog": "node scripts/import-content.mjs",
     "content:validate": "node scripts/content-ops.mjs validate",
     "content:build": "node scripts/content-pipeline.mjs build",
     "content:publish": "node scripts/content-pipeline.mjs publish",

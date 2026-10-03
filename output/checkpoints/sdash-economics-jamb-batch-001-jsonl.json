@@ -3,7 +3,7 @@
   "endpointOrFilter": "local file (JSONL/NDJSON)",
   "pageOrCursor": null,
   "lastSuccessfulBatch": 1,
-  "timestamp": "2026-10-03T20:28:57.995Z",
+  "timestamp": "2026-10-03T21:01:45.375Z",
   "recordsAcquired": 49,
   "recordsAccepted": 191,
   "recordsRejected": 6,
@@ -16,5 +16,5 @@
     "/data/data/com.termux/files/home/gradewise/content/acquired/sdash-economics-jamb-batch-001.jsonl",
     "/data/data/com.termux/files/home/gradewise/content/acquired/sdash-physics-jamb-batch-001.jsonl"
   ],
-  "normalizedAt": "2026-10-03T20:28:58.245Z"
+  "normalizedAt": "2026-10-03T21:01:45.726Z"
 }

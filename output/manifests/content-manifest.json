@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-03T20:28:55.005Z",
+  "generatedAt": "2026-10-03T21:01:42.851Z",
   "acquisition": {
-    "acquired": 5251,
+    "acquired": 5343,
     "files": [
       {
         "source": "aloc-2020-08-20.jsonl",
@@ -28,12 +28,28 @@
         "duplicates": 14
       },
       {
+        "source": "aloc-biology-jamb-batch-002.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
         "source": "aloc-chemistry-jamb-batch-001.jsonl",
         "records": 15,
         "accepted": 8,
         "rejected": 0,
         "quarantined": 0,
         "duplicates": 7
+      },
+      {
+        "source": "aloc-chemistry-jamb-batch-002.jsonl",
+        "records": 15,
+        "accepted": 9,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 6
       },
       {
         "source": "aloc-commerce-jamb-batch-001.jsonl",
@@ -60,6 +76,22 @@
         "duplicates": 15
       },
       {
+        "source": "aloc-economics-jamb-batch-002.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
+        "source": "aloc-english-jamb-batch-001.jsonl",
+        "records": 17,
+        "accepted": 6,
+        "rejected": 4,
+        "quarantined": 3,
+        "duplicates": 7
+      },
+      {
         "source": "aloc-geography-jamb-batch-001.jsonl",
         "records": 15,
         "accepted": 15,
@@ -80,6 +112,14 @@
         "records": 15,
         "accepted": 13,
         "rejected": 2,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-002.jsonl",
+        "records": 15,
+        "accepted": 12,
+        "rejected": 3,
         "quarantined": 0,
         "duplicates": 0
       },
@@ -141,6 +181,14 @@
       },
       {
         "source": "aloc-physics-jamb-batch-008.jsonl",
+        "records": 15,
+        "accepted": 14,
+        "rejected": 1,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-physics-jamb-batch-009.jsonl",
         "records": 15,
         "accepted": 14,
         "rejected": 1,
@@ -691,47 +739,47 @@
         }
       ]
     },
-    "apiCreditUsage": 21
+    "apiCreditUsage": 27
   },
   "questionBank": {
-    "acquired": 5251,
-    "normalized": 5251,
-    "deduplicated": 5129,
-    "unique": 5050,
-    "structurallyValid": 5050,
-    "productionReady": 5050,
-    "quarantined": 7,
-    "rejected": 72,
-    "duplicates": 122,
+    "acquired": 5343,
+    "normalized": 5343,
+    "deduplicated": 5178,
+    "unique": 5091,
+    "structurallyValid": 5091,
+    "productionReady": 5091,
+    "quarantined": 10,
+    "rejected": 77,
+    "duplicates": 165,
     "stages": {
-      "acquired": 5251,
-      "normalized": 5251,
-      "deduplicated": 5129,
-      "structurallyValid": 5050,
-      "productionReady": 5050,
-      "quarantined": 7,
-      "rejected": 72,
-      "duplicates": 122
+      "acquired": 5343,
+      "normalized": 5343,
+      "deduplicated": 5178,
+      "structurallyValid": 5091,
+      "productionReady": 5091,
+      "quarantined": 10,
+      "rejected": 77,
+      "duplicates": 165
     },
     "bySubject": {
       "Accounting": 442,
       "Biology": 429,
-      "Chemistry": 347,
+      "Chemistry": 356,
       "Civic Education": 432,
       "Commerce": 878,
       "CRK": 499,
       "Economics": 510,
-      "English Language": 529,
+      "English Language": 535,
       "Literature in English": 185,
       "Government": 506,
       "Insurance": 100,
       "Geography": 15,
-      "Mathematics": 13,
-      "Physics": 165
+      "Mathematics": 25,
+      "Physics": 179
     },
     "byExam": {
       "WAEC": 1626,
-      "JAMB": 3159,
+      "JAMB": 3200,
       "NECO": 265
     },
     "byYear": {
@@ -741,61 +789,61 @@
       "1997": 40,
       "1999": 48,
       "2000": 146,
-      "2001": 189,
-      "2002": 81,
-      "2003": 241,
-      "2004": 285,
-      "2005": 304,
-      "2006": 286,
-      "2007": 245,
-      "2008": 255,
-      "2009": 402,
-      "2010": 475,
-      "2011": 243,
-      "2012": 367,
-      "2013": 413,
+      "2001": 191,
+      "2002": 83,
+      "2003": 242,
+      "2004": 287,
+      "2005": 305,
+      "2006": 288,
+      "2007": 248,
+      "2008": 257,
+      "2009": 404,
+      "2010": 476,
+      "2011": 245,
+      "2012": 369,
+      "2013": 414,
       "2014": 240,
-      "2015": 243,
+      "2015": 244,
       "2016": 199,
       "2017": 12,
       "2018": 13,
-      "2019": 14,
-      "2020": 11,
-      "2021": 8,
-      "2022": 8,
-      "2023": 55,
-      "2024": 52,
-      "2025": 5,
-      "2026": 5
+      "2019": 15,
+      "2020": 13,
+      "2021": 10,
+      "2022": 10,
+      "2023": 58,
+      "2024": 55,
+      "2025": 7,
+      "2026": 7
     },
     "bySource": {
       "ALOC question database": 4682,
-      "ALOC Station": 177,
+      "ALOC Station": 218,
       "SdashAPI": 191
     },
     "byRightsStatus": {
-      "USER_PROVIDED_AUTHORIZED": 5050
+      "USER_PROVIDED_AUTHORIZED": 5091
     },
     "byVerificationStatus": {
-      "pending": 5050
+      "pending": 5091
     },
     "byTopic": {
-      "Unknown": 5050
+      "Unknown": 5091
     },
     "bySubtopic": {
-      "Unknown": 5050
+      "Unknown": 5091
     },
     "subjectFloors": {
       "English Language": {
         "required": 1500,
-        "available": 529,
-        "shortfall": 971,
+        "available": 535,
+        "shortfall": 965,
         "met": false
       },
       "Mathematics": {
         "required": 1500,
-        "available": 13,
-        "shortfall": 1487,
+        "available": 25,
+        "shortfall": 1475,
         "met": false
       },
       "Biology": {
@@ -806,14 +854,14 @@
       },
       "Chemistry": {
         "required": 1200,
-        "available": 347,
-        "shortfall": 853,
+        "available": 356,
+        "shortfall": 844,
         "met": false
       },
       "Physics": {
         "required": 1500,
-        "available": 165,
-        "shortfall": 1335,
+        "available": 179,
+        "shortfall": 1321,
         "met": false
       },
       "Agricultural Science": {
@@ -959,15 +1007,15 @@
       {
         "subject": "English Language",
         "required": 1500,
-        "available": 529,
-        "shortfall": 971,
+        "available": 535,
+        "shortfall": 965,
         "met": false
       },
       {
         "subject": "Mathematics",
         "required": 1500,
-        "available": 13,
-        "shortfall": 1487,
+        "available": 25,
+        "shortfall": 1475,
         "met": false
       },
       {
@@ -980,15 +1028,15 @@
       {
         "subject": "Chemistry",
         "required": 1200,
-        "available": 347,
-        "shortfall": 853,
+        "available": 356,
+        "shortfall": 844,
         "met": false
       },
       {
         "subject": "Physics",
         "required": 1500,
-        "available": 165,
-        "shortfall": 1335,
+        "available": 179,
+        "shortfall": 1321,
         "met": false
       },
       {

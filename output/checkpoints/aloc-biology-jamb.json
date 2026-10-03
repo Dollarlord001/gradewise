@@ -1,22 +1,23 @@
 {
   "source": "ALOC Station",
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=biology&examType=jamb&limit=15",
-  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MiwiaW50ZXJuYWxJZCI6MTY0NCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
-  "lastSuccessfulBatch": 1,
-  "timestamp": "2026-10-03T20:15:36.580Z",
-  "recordsAcquired": 15,
+  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MywiaW50ZXJuYWxJZCI6MTg0MCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
+  "lastSuccessfulBatch": 2,
+  "timestamp": "2026-10-03T20:48:18.792Z",
+  "recordsAcquired": 30,
   "recordsAccepted": 0,
   "recordsRejected": 1,
-  "recordsDuplicated": 14,
-  "apiCreditUsage": 1,
+  "recordsDuplicated": 29,
+  "apiCreditUsage": 2,
   "errorState": null,
   "status": "partial",
   "batchFiles": [
-    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-001.jsonl"
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-002.jsonl"
   ],
-  "creditsRemaining": 90,
+  "creditsRemaining": 79,
   "rateLimitRemaining": 27,
-  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MiwiaW50ZXJuYWxJZCI6MTY0NCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
+  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MywiaW50ZXJuYWxJZCI6MTg0MCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T20:28:58.153Z"
+  "normalizedAt": "2026-10-03T21:01:45.553Z"
 }

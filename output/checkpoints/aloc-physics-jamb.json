@@ -1,14 +1,14 @@
 {
   "source": "ALOC Station",
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=physics&examType=jamb&limit=15",
-  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6NiwiaW50ZXJuYWxJZCI6MTE5OTksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
-  "lastSuccessfulBatch": 8,
-  "timestamp": "2026-10-03T20:15:54.646Z",
-  "recordsAcquired": 120,
-  "recordsAccepted": 117,
-  "recordsRejected": 3,
+  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6NiwiaW50ZXJuYWxJZCI6MTI3MDksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
+  "lastSuccessfulBatch": 9,
+  "timestamp": "2026-10-03T20:48:33.617Z",
+  "recordsAcquired": 135,
+  "recordsAccepted": 131,
+  "recordsRejected": 4,
   "recordsDuplicated": 0,
-  "apiCreditUsage": 8,
+  "apiCreditUsage": 9,
   "errorState": null,
   "status": "partial",
   "batchFiles": [
@@ -19,11 +19,12 @@
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-005.jsonl",
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-006.jsonl",
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-007.jsonl",
-    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-008.jsonl"
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-008.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-009.jsonl"
   ],
-  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6NiwiaW50ZXJuYWxJZCI6MTE5OTksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
+  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6NiwiaW50ZXJuYWxJZCI6MTI3MDksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T20:28:58.220Z",
+  "normalizedAt": "2026-10-03T21:01:45.683Z",
   "rateLimitRemaining": 25,
-  "creditsRemaining": 88
+  "creditsRemaining": 77
 }

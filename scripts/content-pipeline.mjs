@@ -3,6 +3,8 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import { dedupeQuestions } from "../lib/cbt/core.mjs";
+import { ALOCQuestionSource, QuestionSourceAdapter, SdashQuestionSource } from "../lib/content-sources.mjs";
+export { ALOCQuestionSource, QuestionSourceAdapter, SdashQuestionSource };
 
 const args = Object.fromEntries(process.argv.slice(2).flatMap((part, i, all) => part.startsWith("--") ? [[part.slice(2), all[i + 1]?.startsWith("--") ? "true" : all[i + 1]]] : []));
 const command = process.argv[2] && !process.argv[2].startsWith("--") ? process.argv[2] : "validate";
@@ -23,32 +25,6 @@ async function loadInput(path) {
   if (ext === "jsonl" || ext === "ndjson") return text.split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
   if (ext === "csv") return parseCsv(text).map((r) => ({ ...r, options: typeof r.options === "string" ? JSON.parse(r.options) : r.options }));
   throw new Error("Input must be JSON, JSONL, NDJSON or CSV.");
-}
-
-export class QuestionSourceAdapter {
-  async fetchQuestions() { throw new Error("QuestionSourceAdapter.fetchQuestions must be implemented"); }
-}
-export class ALOCQuestionSource extends QuestionSourceAdapter {
-  async fetchQuestions({ subject, exam = "jamb", year, limit = 120 }) {
-    const key = process.env.ALOC_API_KEY; if (!key) throw new Error("ALOC_API_KEY is not configured.");
-    if (!subject && !year) throw new Error("ALOC import requires a subject or year filter.");
-    const batchSize = Math.min(120, Math.max(1, Number(limit) || 120));
-    const url = new URL(`https://questions.aloc.com.ng/api/v2/m/${batchSize}`); url.searchParams.set("type", exam.toLowerCase()); url.searchParams.set("random", "false"); url.searchParams.set("withComprehension", "true");
-    if (subject) url.searchParams.set("subject", subject.toLowerCase()); if (year) url.searchParams.set("year", String(year));
-    const response = await fetch(url, { headers: { AccessToken: key } });
-    if (!response.ok) throw new Error(`ALOC API request failed (${response.status}); check ALOC_API_KEY and filters.`);
-    const body = await response.json(); const rows = Array.isArray(body.data) ? body.data : body.data ? [body.data] : [];
-    return rows.map((q) => ({ source: "ALOC", sourceName: "ALOC question database", sourceUrl: url.toString(), sourceId: `${subject ?? q.subject}:${q.id}`, exam: ({ utme: "JAMB", jamb: "JAMB", waec: "WAEC", wassce: "WAEC", neco: "NECO" })[String(q.examtype ?? exam).toLowerCase()] ?? String(q.examtype ?? exam).toUpperCase(), year: q.examyear ?? year ?? null, subject: q.subject ?? subject, questionNumber: q.questionNub ?? null, prompt: q.question, correctAnswer: q.answer, explanation: q.solution || null, options: q.option, passage: q.section || null, images: q.image ? [q.image] : [], sourceMetadata: q }));
-  }
-}
-export class SdashQuestionSource extends QuestionSourceAdapter {
-  async fetchQuestions({ subject, exam = "utme", year, limit = 50 }) {
-    const key = process.env.SDASH_API_KEY; if (!key) throw new Error("SDASH_API_KEY is not configured.");
-    const url = new URL("https://sdashapi.com/api/v1/q"); url.searchParams.set("type", exam.toLowerCase()); url.searchParams.set("limit", String(Math.min(50, Math.max(1, Number(limit)))));
-    if (subject) url.searchParams.set("subject", subject.toLowerCase()); if (year) url.searchParams.set("year", String(year));
-    const response = await fetch(url, { headers: { AccessToken: key } }); if (!response.ok) throw new Error(`SdashAPI request failed (${response.status}).`); const body = await response.json(); const payload = Array.isArray(body.data) ? body.data : body.data ? [body.data] : [];
-    return payload.map((q, i) => ({ source: "SDASH", sourceName: "SdashAPI", sourceUrl: "https://sdashapi.com/docs", sourceId: String(q.id), exam: exam.toUpperCase() === "UTME" ? "JAMB" : exam.toUpperCase(), year: Number(q.examyear ?? year), subject: q.subject ?? subject, questionNumber: i + 1, prompt: q.question, correctAnswer: q.answer, explanation: q.solution ?? null, topic: q.metadata?.topic ?? null, subtopic: q.metadata?.subtopic ?? null, options: q.option, passage: q.section ?? q.metadata?.passage ?? null, images: q.image ? [q.image] : [] }));
-  }
 }
 
 if (command === "publish") {

@@ -1,22 +1,23 @@
 {
   "source": "ALOC Station",
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=economics&examType=jamb&limit=15",
-  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6OCwiaW50ZXJuYWxJZCI6NTQwMiwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
-  "lastSuccessfulBatch": 1,
-  "timestamp": "2026-10-03T20:16:08.393Z",
-  "recordsAcquired": 15,
+  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MTUsImludGVybmFsSWQiOjU0NTksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
+  "lastSuccessfulBatch": 2,
+  "timestamp": "2026-10-03T20:48:45.377Z",
+  "recordsAcquired": 30,
   "recordsAccepted": 0,
   "recordsRejected": 0,
-  "recordsDuplicated": 15,
-  "apiCreditUsage": 1,
+  "recordsDuplicated": 30,
+  "apiCreditUsage": 2,
   "errorState": null,
   "status": "partial",
   "batchFiles": [
-    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-economics-jamb-batch-001.jsonl"
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-economics-jamb-batch-001.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-economics-jamb-batch-002.jsonl"
   ],
-  "creditsRemaining": 87,
-  "rateLimitRemaining": 23,
-  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6OCwiaW50ZXJuYWxJZCI6NTQwMiwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
+  "creditsRemaining": 76,
+  "rateLimitRemaining": 24,
+  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MTUsImludGVybmFsSWQiOjU0NTksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T20:28:58.170Z"
+  "normalizedAt": "2026-10-03T21:01:45.584Z"
 }
