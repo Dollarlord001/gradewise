@@ -3,10 +3,11 @@ import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { requireSupabaseConfig } from "./env";
 
-export async function createClient() {
+export async function createClient(firebaseIdToken?: string) {
   const { url, key } = requireSupabaseConfig();
   const cookieStore = await cookies();
   return createServerClient(url, key, {
+    global: firebaseIdToken ? { headers: { Authorization: `Bearer ${firebaseIdToken}` } } : undefined,
     cookieOptions: { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/" },
     cookies: {
       getAll: () => cookieStore.getAll(),

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { randomUUID } from "node:crypto";
 import { createClient } from "@/lib/supabase/server";
+import { getAppIdentity } from "@/lib/firebase/session";
 
 export const dynamic = "force-dynamic";
 
@@ -12,9 +13,9 @@ export async function GET(request: Request) {
   const count = Math.min(180, Math.max(1, Number(params.get("count") || 40)));
   if (!subject || subject.length > 80) return NextResponse.json({ error: "A valid subject is required." }, { status: 400 });
   try {
-    const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return NextResponse.json({ error: "Sign in to access the verified question bank." }, { status: 401 });
+    const identity = await getAppIdentity();
+    if (!identity) return NextResponse.json({ error: "Sign in to access the verified question bank." }, { status: 401 });
+    const supabase = await createClient(identity.idToken);
     const { data: contentVersion, error: versionError } = await supabase.from("offline_content_versions").select("version").eq("exam", "JAMB").single();
     if (versionError) throw versionError;
     if (params.get("topics") === "1") {
@@ -54,9 +55,9 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
-    const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return NextResponse.json({ error: "Sign in to sync examination results." }, { status: 401 });
+    const identity = await getAppIdentity();
+    if (!identity) return NextResponse.json({ error: "Sign in to sync examination results." }, { status: 401 });
+    const supabase = await createClient(identity.idToken);
     const body = await request.json();
     if (!body?.attemptId || !Array.isArray(body?.responses) || !["full", "practice"].includes(body.mode) || body.responses.length < 1 || body.responses.length > 180 || new Set(body.responses.map((r: { questionId: string }) => r.questionId)).size !== body.responses.length) return NextResponse.json({ error: "Invalid examination payload." }, { status: 400 });
     const { data, error } = await supabase.rpc("sync_cbt_attempt", {

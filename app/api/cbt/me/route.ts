@@ -1,14 +1,26 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { getAppIdentity } from "@/lib/firebase/session";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return NextResponse.json({ error: "Sign in to use CBT." }, { status: 401 });
-    return NextResponse.json({ studentId: user.id }, { headers: { "Cache-Control": "private, no-store" } });
+    const identity = await getAppIdentity();
+    if (!identity) return NextResponse.json({ error: "Sign in to use CBT." }, { status: 401 });
+    const supabase = await createClient(identity.idToken);
+    const [profile, studentProfile, subjects] = await Promise.all([
+      supabase.from("profiles").select("display_name").eq("user_id", identity.studentId).maybeSingle(),
+      supabase.from("student_profiles").select("exam,target_score,study_minutes_per_day,preferences,onboarding_completed_at").eq("user_id", identity.studentId).maybeSingle(),
+      supabase.from("student_subjects").select("subject").eq("student_id", identity.studentId).order("subject"),
+    ]);
+    if (profile.error || studentProfile.error || subjects.error) throw profile.error ?? studentProfile.error ?? subjects.error;
+    return NextResponse.json({
+      studentId: identity.studentId,
+      profile: { displayName: profile.data?.display_name ?? "Student" },
+      studentProfile: studentProfile.data,
+      subjects: (subjects.data ?? []).map((row) => row.subject),
+    }, { headers: { "Cache-Control": "private, no-store" } });
   } catch {
     return NextResponse.json({ error: "Account identity is unavailable." }, { status: 503 });
   }

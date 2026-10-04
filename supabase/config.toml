@@ -1,0 +1,3 @@
+[auth.third_party.firebase]
+enabled = true
+project_id = "tutor-me-2fb22"

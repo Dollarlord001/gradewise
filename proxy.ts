@@ -1,10 +1,10 @@
 import type { NextRequest } from "next/server";
-import { refreshSupabaseSession } from "@/lib/supabase/proxy";
+import { NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {
   const requestId = crypto.randomUUID();
   request.headers.set("x-request-id", requestId);
-  const response = await refreshSupabaseSession(request);
+  const response = NextResponse.next({ request });
   response.headers.set("x-request-id", requestId);
   return response;
 }

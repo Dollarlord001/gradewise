@@ -10,6 +10,7 @@ import { StudentWorkspace, type WorkspaceMode } from "@/components/student-works
 import { ResourcesDirectory } from "@/components/resources-directory";
 import { siteUrl } from "@/lib/site";
 import { createClient } from "@/lib/supabase/server";
+import { getAppIdentity } from "@/lib/firebase/session";
 import { redirect } from "next/navigation";
 
 const routeSlugs = Object.keys(destinationContent);
@@ -29,17 +30,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {};
 }
 
-export default async function DestinationPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ onboarding?: string }> }) {
+export default async function DestinationPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ onboarding?: string; next?: string }> }) {
   const { slug } = await params;
   const query = await searchParams;
   const exam = exams.find((item) => item.slug === slug);
   const page = destinationContent[slug];
   if (!exam && !page) notFound();
 
+  if (slug === "signup" && query.onboarding === "1") {
+    if (!await getAppIdentity()) redirect("/signin?next=%2Fsignup%3Fonboarding%3D1");
+  }
+
+  if (slug === "signin") {
+    const identity = await getAppIdentity();
+    if (identity) redirect("/dashboard");
+  }
+
   if (workspaceModes.has(slug)) {
-    let user = null;
-    try { const supabase = await createClient(); user = (await supabase.auth.getUser()).data.user; } catch { /* Configured auth is required below. */ }
-    if (!user) redirect(`/signin?next=/${slug}`);
+    const identity = await getAppIdentity();
+    if (!identity) redirect(`/signin?next=%2F${slug}`);
+    const supabase = await createClient(identity.idToken);
+    const { data: profile } = await supabase.from("student_profiles").select("onboarding_completed_at").eq("user_id", identity.studentId).maybeSingle();
+    if (!profile?.onboarding_completed_at) redirect("/signup?onboarding=1");
+    if (!profile?.onboarding_completed_at) redirect("/signup?onboarding=1");
   }
 
   if (exam) return <main id="main-content" className="destination-page exam-destination">
@@ -53,7 +66,7 @@ export default async function DestinationPage({ params, searchParams }: { params
   </main>;
 
   return <main id="main-content" className="destination-page"><section className="destination-hero generic-destination"><div className="destination-hero-inner"><div className="breadcrumbs"><Link href="/">Home</Link><span>/</span><b>{page!.eyebrow}</b></div><div className="generic-hero-grid"><div className="destination-hero-copy"><span className="eyebrow">{page!.eyebrow}</span><h1>{page!.title}</h1><p>{page!.intro}</p><div className="destination-actions"><Link href={slug === "signin" ? "/dashboard" : slug === "signup" ? "/exams" : "/practice"} className="button">{slug === "signin" ? "Continue to dashboard" : slug === "signup" ? "Choose my exam" : "Get started"} <span>↗</span></Link>{slug !== "signup" && slug !== "signin" && <Link href="/exams" className="button button-outline">Explore exams <span>→</span></Link>}</div><div className="page-feature-list">{page!.features.map((feature) => <span key={feature}><b>✓</b>{feature}</span>)}</div></div><div className="generic-hero-art"><div className="generic-art-orbit" /><span>{page!.icon}</span><div className="generic-art-caption"><b>YOUR STUDY SPACE</b><small>A clearer next step, every day.</small></div></div></div></div></section>
-    {slug === "signup" ? <section className="section auth-section">{query.onboarding === "1" ? <StudentOnboarding/> : <div className="auth-card"><div className="auth-card-header"><span className="auth-card-icon">✦</span><div><h2>Create your TUTOR-ME account</h2><p>Start a study plan that stays with you.</p></div></div><AuthDemoForm signup/><p className="auth-switch">Already have an account? <Link href="/signin">Sign in</Link></p></div>}<aside className="auth-side-note"><span>✦</span><strong>A thoughtful study routine starts with one good step.</strong><small>Choose your exam, set a goal and keep your learning in one place.</small></aside></section> : slug === "signin" ? <section className="section auth-section"><div className="auth-card"><div className="auth-card-header"><span className="auth-card-icon">{page!.icon}</span><div><h2>Sign in to TUTOR-ME</h2><p>Your study plan is waiting for you.</p></div></div><AuthDemoForm signup={false}/><p className="auth-switch">New to TUTOR-ME? <Link href="/signup">Create your account</Link></p></div><div className="auth-side-note"><span>✦</span><strong>A thoughtful study routine starts with one good step.</strong><small>Choose your exam, set a goal and keep your learning in one place.</small></div></section> : workspaceModes.has(slug) ? <section className="section workspace-shell"><StudentWorkspace mode={slug as WorkspaceMode}/></section> : <>
+    {slug === "signup" ? <section className="section auth-section">{query.onboarding === "1" ? <StudentOnboarding/> : <div className="auth-card"><div className="auth-card-header"><span className="auth-card-icon">✦</span><div><h2>Create your TUTOR-ME account</h2><p>Start a study plan that stays with you.</p></div></div><AuthDemoForm signup/><p className="auth-switch">Already have an account? <Link href="/signin">Sign in</Link></p></div>}<aside className="auth-side-note"><span>✦</span><strong>A thoughtful study routine starts with one good step.</strong><small>Choose your exam, set a goal and keep your learning in one place.</small></aside></section> : slug === "signin" ? <section className="section auth-section"><div className="auth-card"><div className="auth-card-header"><span className="auth-card-icon">{page!.icon}</span><div><h2>Sign in to TUTOR-ME</h2><p>Your study plan is waiting for you.</p></div></div><AuthDemoForm signup={false} next={query.next}/><p className="auth-switch">New to TUTOR-ME? <Link href="/signup">Create your account</Link></p></div><div className="auth-side-note"><span>✦</span><strong>A thoughtful study routine starts with one good step.</strong><small>Choose your exam, set a goal and keep your learning in one place.</small></div></section> : workspaceModes.has(slug) ? <section className="section workspace-shell"><StudentWorkspace mode={slug as WorkspaceMode}/></section> : <>
       <section className="section destination-overview"><div><SectionHeading eyebrow="A clearer way forward" title="Build confidence one step at a time." copy="Your study space helps you turn a big goal into manageable learning sessions."/><div className="overview-chips"><span>✓ &nbsp;Made around your exam</span><span>✓ &nbsp;Progress you can understand</span><span>✓ &nbsp;A steady routine</span></div></div><div className="overview-stat-card"><span className="overview-label">YOUR STUDY RHYTHM</span><div className="overview-stat"><strong>68<span>%</span></strong><span>weekly goal<br/>in progress</span></div><ProgressBar value={68} color="green"/><div className="overview-mini"><span><b>12 days</b><small>Study streak</small></span><span><b>4 subjects</b><small>In your plan</small></span><span><b>320</b><small>JAMB target</small></span></div></div></section>
       {slug === "exams" ? <section className="section exam-directory-section"><div className="section-top-row"><SectionHeading eyebrow="Choose your preparation path" title="Find the exam you’re working towards." copy="Each destination brings subjects, syllabus learning, practice and CBT preparation together."/><span className="demo-label">INDEPENDENT EXAM PREPARATION</span></div><div className="exam-grid">{exams.map((item) => <ExamCard key={item.slug} exam={item}/>)}</div><div className="exam-directory-next"><span>Not sure where to begin?</span><Link href="/signup">Set up your student plan ↗</Link></div></section> : <section className="section destination-tools"><div className="section-top-row"><SectionHeading eyebrow="Explore your study space" title="Useful tools for your next step." copy="Choose a starting point and make the most of your study time."/><span className="demo-label">SAMPLE STUDENT VIEW</span></div><div className="destination-feature-grid">{page!.features.map((feature, index) => <DestinationCard key={feature} icon={["↗", "⌁", "◉"][index % 3]} title={feature} copy={["Work through clear topics and lessons, at a pace that suits you.", "See useful feedback and understand what to revisit next.", "Keep your exam goal in focus as you prepare."][index % 3]} href={["/learn", "/practice", "/planner"][index % 3]}/>)}</div></section>}
       {slug === "practice" && <section className="section destination-practice"><div><SectionHeading eyebrow="Try a sample question" title="Practice helps learning stick." copy="This original example shows answer selection and review. Question sets will connect to a question service."/><div className="cbt-feature-list"><span>⌁ &nbsp;Topic practice</span><span>◉ &nbsp;Weak topics</span><span>↻ &nbsp;Mistake review</span></div></div><InteractivePractice/></section>}

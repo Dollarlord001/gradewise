@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ProgressBar } from "@/components/ui";
 import { initialStudentState, practiceQuestions, studentSubjects, demoTopics, type StudentDemoState } from "@/lib/student-demo";
 import { MobileBottomNav } from "@/components/interactive-practice";
-import { signOutAction } from "@/app/actions/auth";
+import { firebaseAuth } from "@/lib/firebase/client";
+import { signOut } from "firebase/auth";
 
 export type WorkspaceMode = "dashboard" | "learn" | "practice" | "ai-tutor" | "mistake-bank" | "progress" | "planner";
 const storageKey = "tutor-me-student-demo-v1";
@@ -27,6 +29,22 @@ function useStudentState() {
       if (stored) setStudent({ ...initialStudentState, ...JSON.parse(stored) as Partial<StudentDemoState> });
     } catch { /* The demo can continue with the in-memory sample state. */ }
     setLoaded(true);
+    let live = true;
+    fetch("/api/cbt/me", { cache: "no-store" }).then(async (response) => {
+      if (!response.ok) return null;
+      return await response.json() as { profile?: { displayName?: string }; studentProfile?: { exam?: string; target_score?: number; study_minutes_per_day?: number; preferences?: Record<string, unknown> }; subjects?: string[] };
+    }).then((account) => {
+      if (!live || !account?.studentProfile) return;
+      setStudent((current) => ({
+        ...current,
+        learnerName: account.profile?.displayName ?? current.learnerName,
+        exam: account.studentProfile?.exam ?? current.exam,
+        target: account.studentProfile?.target_score ?? current.target,
+        subjects: account.subjects ?? current.subjects,
+        weeklyStudyHours: Math.round((account.studentProfile?.study_minutes_per_day ?? 0) * 7 / 60 * 10) / 10,
+      }));
+    }).catch(() => { /* A signed-in workspace still renders; account data can retry next visit. */ });
+    return () => { live = false; };
   }, []);
   useEffect(() => {
     if (loaded) window.localStorage.setItem(storageKey, JSON.stringify(student));
@@ -38,14 +56,13 @@ function PageTitle({ eyebrow, title, copy, aside }: { eyebrow: string; title: st
   return <div className="workspace-page-title"><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div>{aside}</div>;
 }
 
-function DemoNotice() { return <div className="workspace-demo-notice"><span>i</span>Account progress comes from completed CBT attempts. <form action={signOutAction}><button type="submit" className="quiet-link">Sign out</button></form></div>; }
-
 export function StudentWorkspace({ mode }: { mode: WorkspaceMode }) {
+  const router = useRouter();
   const [student, setStudent] = useStudentState();
   const [completed, setCompleted] = useState<string[]>([]);
 
   return <div className="student-workspace">
-    <DemoNotice />
+    <div className="workspace-demo-notice"><span>i</span>Account progress comes from completed CBT attempts. <button type="button" className="quiet-link" onClick={async () => { await signOut(firebaseAuth()); await fetch("/api/auth/session", { method: "DELETE" }); router.replace("/signin"); router.refresh(); }}>Sign out</button></div>
     {mode === "dashboard" && <Dashboard student={student} />}
     {mode === "learn" && <LearnLibrary exam={student.exam} subjects={student.subjects} completed={[...student.completedLessons, ...completed]} onComplete={(name) => { setCompleted((previous) => previous.includes(name) ? previous : [...previous, name]); setStudent((previous) => ({ ...previous, completedLessons: previous.completedLessons.includes(name) ? previous.completedLessons : [...previous.completedLessons, name] })); }} />}
     {mode === "practice" && <ProductionPracticeBuilder />}

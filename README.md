@@ -1,16 +1,16 @@
 # TUTOR-ME
 
-TUTOR-ME is an exam preparation platform for Nigerian students, built with Next.js 16, React and Supabase Auth/PostgreSQL. The repository name remains `gradewise` for history; the visible product is TUTOR-ME.
+TUTOR-ME is an exam preparation platform for Nigerian students, built with Next.js 16, React, Firebase Authentication and Supabase PostgreSQL. The repository name remains `gradewise` for history; the visible product is TUTOR-ME.
 
 ## Local development
 
-Use Node.js 22 or newer and install dependencies with `npm install`. Copy `.env.example` to `.env.local`, then configure a dedicated Supabase development project. Account access remains unavailable until valid Supabase public configuration is supplied.
+Use Node.js 22 or newer and install dependencies with `npm install`. Copy `.env.example` to `.env.local`, configure Supabase and Firebase web values, and provide Firebase Admin service-account environment variables or Application Default Credentials. Account access remains unavailable until Firebase Admin verifies tokens and the Firebase identity migration is applied.
 
 ```sh
 npm run dev
 ```
 
-Apply `supabase/migrations` using the Supabase CLI or your controlled migration workflow. Configure Upstash Redis before testing production-mode authentication rate limits.
+Apply `supabase/migrations` using the Supabase CLI or your controlled migration workflow. Enable Supabase's Firebase third-party Auth integration for project `tutor-me-2fb22` so PostgreSQL RLS receives verified Firebase JWT claims. Configure Upstash Redis before testing production-mode authentication rate limits.
 
 ## Commands
 

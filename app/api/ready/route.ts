@@ -12,7 +12,7 @@ export async function GET() {
     } catch { database = false; }
   }
   const ready = configured && database;
-  return Response.json({ status: ready ? "ready" : "not_ready", dependencies: { supabaseAuthConfigured: configured, database } }, {
+  return Response.json({ status: ready ? "ready" : "not_ready", dependencies: { supabaseConfigured: configured, database } }, {
     status: ready ? 200 : 503,
     headers: { "Cache-Control": "no-store" },
   });

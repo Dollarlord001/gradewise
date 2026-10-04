@@ -7,6 +7,7 @@ import "./landing.css";
 import "./quality.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { FirebaseSessionSync } from "@/components/firebase-session-sync";
 import { siteUrl } from "@/lib/site";
 
 const geistSans = Geist({
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-NG" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col"><a className="skip-link" href="#main-content">Skip to content</a><SiteHeader />{children}<SiteFooter /></body>
+      <body className="min-h-full flex flex-col"><FirebaseSessionSync /><a className="skip-link" href="#main-content">Skip to content</a><SiteHeader />{children}<SiteFooter /></body>
     </html>
   );
 }
