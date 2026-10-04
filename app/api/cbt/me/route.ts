@@ -10,7 +10,7 @@ export async function GET() {
     if (!identity) return NextResponse.json({ error: "Sign in to use CBT." }, { status: 401 });
     const supabase = await createClient(identity.idToken);
     const [profile, studentProfile, subjects] = await Promise.all([
-      supabase.from("profiles").select("display_name").eq("user_id", identity.studentId).maybeSingle(),
+      supabase.from("profiles").select("display_name").eq("id", identity.studentId).maybeSingle(),
       supabase.from("student_profiles").select("exam,target_score,study_minutes_per_day,preferences,onboarding_completed_at").eq("user_id", identity.studentId).maybeSingle(),
       supabase.from("student_subjects").select("subject").eq("student_id", identity.studentId).order("subject"),
     ]);
