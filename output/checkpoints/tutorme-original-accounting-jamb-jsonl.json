@@ -1,0 +1,13 @@
+{
+  "source": "tutorme-original-accounting-jamb.jsonl",
+  "endpointOrFilter": "local file (JSONL/NDJSON)",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 1,
+  "timestamp": "2026-10-03T22:09:45.274Z",
+  "recordsAcquired": 8,
+  "recordsAccepted": 7,
+  "recordsRejected": 1,
+  "recordsDuplicated": 0,
+  "apiCreditUsage": null,
+  "errorState": null
+}

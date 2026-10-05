@@ -1,0 +1,13 @@
+{
+  "source": "tutorme-original-irk-jamb.jsonl",
+  "endpointOrFilter": "local file (JSONL/NDJSON)",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 1,
+  "timestamp": "2026-10-03T22:09:45.536Z",
+  "recordsAcquired": 13,
+  "recordsAccepted": 13,
+  "recordsRejected": 0,
+  "recordsDuplicated": 0,
+  "apiCreditUsage": null,
+  "errorState": null
+}

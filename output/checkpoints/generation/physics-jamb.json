@@ -1,0 +1,19 @@
+{
+  "subject": "Physics",
+  "exam": "JAMB",
+  "provider": "gemini",
+  "batches": 1,
+  "generated": 8,
+  "accepted": 8,
+  "rejected": 0,
+  "status": "provider_unavailable",
+  "model": "gemini-3.6-flash",
+  "updatedAt": "2026-10-03T22:03:45.804Z",
+  "providerErrors": {
+    "groq": "groq HTTP 429",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402",
+    "gemini": "gemini HTTP 429"
+  },
+  "lastError": "gemini HTTP 429"
+}

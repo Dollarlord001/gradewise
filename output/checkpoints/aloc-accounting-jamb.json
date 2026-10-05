@@ -3,14 +3,14 @@
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=accounting&examType=jamb&limit=15",
   "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MSwiaW50ZXJuYWxJZCI6MTA5NywiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
   "lastSuccessfulBatch": 1,
-  "timestamp": "2026-10-03T20:16:58.406Z",
+  "timestamp": "2026-10-03T21:35:52.661Z",
   "recordsAcquired": 15,
   "recordsAccepted": 12,
   "recordsRejected": 0,
   "recordsDuplicated": 3,
   "apiCreditUsage": 1,
-  "errorState": null,
-  "status": "partial",
+  "errorState": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
+  "status": "permanent_error",
   "batchFiles": [
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-accounting-jamb-batch-001.jsonl"
   ],
@@ -18,5 +18,5 @@
   "rateLimitRemaining": 22,
   "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MSwiaW50ZXJuYWxJZCI6MTA5NywiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T21:01:45.540Z"
+  "normalizedAt": "2026-10-03T22:09:46.001Z"
 }

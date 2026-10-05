@@ -1,0 +1,19 @@
+{
+  "subject": "Agricultural Science",
+  "exam": "JAMB",
+  "provider": "groq",
+  "batches": 2,
+  "generated": 13,
+  "accepted": 12,
+  "rejected": 1,
+  "status": "provider_unavailable",
+  "model": "openai/gpt-oss-20b",
+  "updatedAt": "2026-10-03T22:01:55.461Z",
+  "providerErrors": {
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402",
+    "gemini": "gemini HTTP 429",
+    "groq": "groq HTTP 429"
+  },
+  "lastError": "groq HTTP 429"
+}

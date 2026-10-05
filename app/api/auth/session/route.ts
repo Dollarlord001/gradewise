@@ -7,7 +7,16 @@ export const dynamic = "force-dynamic";
 
 function sameOrigin(request: Request) {
   const origin = request.headers.get("origin");
-  return !!origin && origin === new URL(request.url).origin;
+  if (!origin) return false;
+  const requestOrigin = new URL(request.url).origin;
+  if (origin === requestOrigin) return true;
+
+  // Next may construct request.url from the local listener while a reverse
+  // proxy preserves the browser-facing host in forwarded headers.
+  const forwardedHost = request.headers.get("x-forwarded-host") ?? request.headers.get("host");
+  if (!forwardedHost) return false;
+  const forwardedProto = request.headers.get("x-forwarded-proto")?.split(",")[0]?.trim() ?? new URL(request.url).protocol.replace(":", "");
+  return origin === `${forwardedProto}://${forwardedHost}`;
 }
 
 export async function POST(request: Request) {

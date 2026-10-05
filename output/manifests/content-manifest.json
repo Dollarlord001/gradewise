@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-03T21:01:42.851Z",
+  "generatedAt": "2026-10-03T22:09:42.587Z",
   "acquisition": {
-    "acquired": 5343,
+    "acquired": 5849,
     "files": [
       {
         "source": "aloc-2020-08-20.jsonl",
@@ -36,6 +36,30 @@
         "duplicates": 15
       },
       {
+        "source": "aloc-biology-jamb-batch-003.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
+        "source": "aloc-biology-jamb-batch-004.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
+        "source": "aloc-biology-jamb-batch-005.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
         "source": "aloc-chemistry-jamb-batch-001.jsonl",
         "records": 15,
         "accepted": 8,
@@ -50,6 +74,30 @@
         "rejected": 0,
         "quarantined": 0,
         "duplicates": 6
+      },
+      {
+        "source": "aloc-chemistry-jamb-batch-003.jsonl",
+        "records": 15,
+        "accepted": 11,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 4
+      },
+      {
+        "source": "aloc-chemistry-jamb-batch-004.jsonl",
+        "records": 15,
+        "accepted": 7,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 8
+      },
+      {
+        "source": "aloc-chemistry-jamb-batch-005.jsonl",
+        "records": 15,
+        "accepted": 13,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 2
       },
       {
         "source": "aloc-commerce-jamb-batch-001.jsonl",
@@ -77,6 +125,30 @@
       },
       {
         "source": "aloc-economics-jamb-batch-002.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
+        "source": "aloc-economics-jamb-batch-003.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
+        "source": "aloc-economics-jamb-batch-004.jsonl",
+        "records": 15,
+        "accepted": 0,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 15
+      },
+      {
+        "source": "aloc-economics-jamb-batch-005.jsonl",
         "records": 15,
         "accepted": 0,
         "rejected": 0,
@@ -117,6 +189,70 @@
       },
       {
         "source": "aloc-mathematics-jamb-batch-002.jsonl",
+        "records": 15,
+        "accepted": 12,
+        "rejected": 3,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-003.jsonl",
+        "records": 15,
+        "accepted": 14,
+        "rejected": 1,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-004.jsonl",
+        "records": 15,
+        "accepted": 13,
+        "rejected": 2,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-005.jsonl",
+        "records": 15,
+        "accepted": 13,
+        "rejected": 2,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-006.jsonl",
+        "records": 15,
+        "accepted": 15,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-007.jsonl",
+        "records": 15,
+        "accepted": 13,
+        "rejected": 2,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-008.jsonl",
+        "records": 15,
+        "accepted": 13,
+        "rejected": 2,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-009.jsonl",
+        "records": 15,
+        "accepted": 15,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-mathematics-jamb-batch-010.jsonl",
         "records": 15,
         "accepted": 12,
         "rejected": 3,
@@ -196,6 +332,30 @@
         "duplicates": 0
       },
       {
+        "source": "aloc-physics-jamb-batch-010.jsonl",
+        "records": 15,
+        "accepted": 15,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-physics-jamb-batch-011.jsonl",
+        "records": 15,
+        "accepted": 14,
+        "rejected": 1,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "aloc-physics-jamb-batch-012.jsonl",
+        "records": 15,
+        "accepted": 15,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
         "source": "sdash-biology-jamb-batch-001.jsonl",
         "records": 50,
         "accepted": 50,
@@ -226,560 +386,303 @@
         "rejected": 2,
         "quarantined": 1,
         "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-accounting-jamb.jsonl",
+        "records": 8,
+        "accepted": 7,
+        "rejected": 1,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-agricultural-science-jamb.jsonl",
+        "records": 12,
+        "accepted": 12,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-animal-husbandry-jamb.jsonl",
+        "records": 5,
+        "accepted": 5,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-arabic-jamb.jsonl",
+        "records": 5,
+        "accepted": 4,
+        "rejected": 1,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-biology-jamb.jsonl",
+        "records": 12,
+        "accepted": 12,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-chemistry-jamb.jsonl",
+        "records": 7,
+        "accepted": 7,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-civic-education-jamb.jsonl",
+        "records": 8,
+        "accepted": 8,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-computer-science-jamb.jsonl",
+        "records": 10,
+        "accepted": 10,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-crk-jamb.jsonl",
+        "records": 4,
+        "accepted": 4,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-current-affairs-jamb.jsonl",
+        "records": 18,
+        "accepted": 18,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-fine-art-jamb.jsonl",
+        "records": 8,
+        "accepted": 8,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-further-mathematics-jamb.jsonl",
+        "records": 9,
+        "accepted": 6,
+        "rejected": 3,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-geography-jamb.jsonl",
+        "records": 3,
+        "accepted": 3,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-hausa-jamb.jsonl",
+        "records": 8,
+        "accepted": 8,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-history-jamb.jsonl",
+        "records": 21,
+        "accepted": 21,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-home-economics-jamb.jsonl",
+        "records": 5,
+        "accepted": 5,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-igbo-jamb.jsonl",
+        "records": 8,
+        "accepted": 8,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-insurance-jamb.jsonl",
+        "records": 8,
+        "accepted": 8,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-irk-jamb.jsonl",
+        "records": 13,
+        "accepted": 13,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-literature-in-english-jamb.jsonl",
+        "records": 4,
+        "accepted": 4,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-mathematics-jamb.jsonl",
+        "records": 8,
+        "accepted": 5,
+        "rejected": 3,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-music-jamb.jsonl",
+        "records": 6,
+        "accepted": 6,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-physics-jamb.jsonl",
+        "records": 8,
+        "accepted": 8,
+        "rejected": 0,
+        "quarantined": 0,
+        "duplicates": 0
+      },
+      {
+        "source": "tutorme-original-yoruba-jamb.jsonl",
+        "records": 8,
+        "accepted": 7,
+        "rejected": 1,
+        "quarantined": 0,
+        "duplicates": 0
       }
     ],
     "liveHarvest": {
-      "generatedAt": "2026-10-03T20:24:19.218Z",
-      "subjects": "requested subject list",
-      "boundedBatches": 56,
+      "generatedAt": "2026-10-03T21:55:06.291Z",
+      "subjects": [
+        "Mathematics",
+        "Biology",
+        "Chemistry",
+        "Physics"
+      ],
+      "boundedBatches": 4,
       "outcomes": [
         {
           "provider": "aloc",
-          "subject": "accounting",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-accounting-jamb.json",
-          "error": null
+          "subject": "Mathematics",
+          "status": "permanent_error",
+          "reason": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
+          "records": 0,
+          "checkpoint": "/data/data/com.termux/files/home/gradewise/output/checkpoints/aloc-mathematics-jamb.json",
+          "apiCreditUsage": 10
         },
         {
           "provider": "aloc",
-          "subject": "agricultural science",
-          "status": "error",
+          "subject": "Biology",
+          "status": "permanent_error",
+          "reason": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
           "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-agricultural-science-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+          "checkpoint": "/data/data/com.termux/files/home/gradewise/output/checkpoints/aloc-biology-jamb.json",
+          "apiCreditUsage": 7
         },
         {
           "provider": "aloc",
-          "subject": "animal husbandry",
-          "status": "error",
+          "subject": "Chemistry",
+          "status": "permanent_error",
+          "reason": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
           "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-animal-husbandry-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
+          "checkpoint": "/data/data/com.termux/files/home/gradewise/output/checkpoints/aloc-chemistry-jamb.json",
+          "apiCreditUsage": 11
         },
         {
           "provider": "aloc",
-          "subject": "arabic",
-          "status": "error",
+          "subject": "Physics",
+          "status": "permanent_error",
+          "reason": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
           "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-arabic-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "biology",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-biology-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "chemistry",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-chemistry-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "civic education",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-civic-education-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "commerce",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-commerce-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "computer science",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-computer-science-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "crk",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-crk-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "current affairs",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-current-affairs-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "economics",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-economics-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "english language",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-english-language-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "fine art",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-fine-art-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "further mathematics",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-further-mathematics-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "geography",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-geography-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "government",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-government-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "hausa",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-hausa-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "history",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-history-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "home economics",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-home-economics-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "igbo",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-igbo-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "insurance",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-insurance-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "irk",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-irk-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "literature in english",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-literature-in-english-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "mathematics",
-          "status": "partial",
-          "records": 15,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/aloc-mathematics-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "music",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-music-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "aloc",
-          "subject": "physics",
-          "status": "partial",
-          "records": 120,
-          "apiCreditUsage": 8,
-          "checkpoint": "output/checkpoints/aloc-physics-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "aloc",
-          "subject": "yoruba",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/aloc-yoruba-jamb.json",
-          "error": "ALOC Station API rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "accounting",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-accounting-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "agricultural science",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-agricultural-science-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "animal husbandry",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-animal-husbandry-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "arabic",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-arabic-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "biology",
-          "status": "complete",
-          "records": 50,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/sdash-biology-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "sdash",
-          "subject": "chemistry",
-          "status": "complete",
-          "records": 50,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/sdash-chemistry-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "sdash",
-          "subject": "civic education",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-civic-education-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "commerce",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-commerce-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "computer science",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-computer-science-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "crk",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-crk-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "current affairs",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-current-affairs-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "economics",
-          "status": "complete",
-          "records": 49,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/sdash-economics-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "sdash",
-          "subject": "english language",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-english-language-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 404); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "fine art",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-fine-art-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "further mathematics",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-further-mathematics-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "geography",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-geography-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "government",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-government-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "hausa",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-hausa-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "history",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-history-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "home economics",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-home-economics-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "igbo",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-igbo-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "insurance",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-insurance-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "irk",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-irk-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "literature in english",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-literature-in-english-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "mathematics",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-mathematics-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "music",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-music-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
-        },
-        {
-          "provider": "sdash",
-          "subject": "physics",
-          "status": "complete",
-          "records": 50,
-          "apiCreditUsage": 1,
-          "checkpoint": "output/checkpoints/sdash-physics-jamb.json",
-          "error": null
-        },
-        {
-          "provider": "sdash",
-          "subject": "yoruba",
-          "status": "error",
-          "records": 0,
-          "apiCreditUsage": 0,
-          "checkpoint": "output/checkpoints/sdash-yoruba-jamb.json",
-          "error": "SdashAPI rejected the request (HTTP 403); review filters, credentials, and access rights."
+          "checkpoint": "/data/data/com.termux/files/home/gradewise/output/checkpoints/aloc-physics-jamb.json",
+          "apiCreditUsage": 32
         }
       ]
     },
-    "apiCreditUsage": 27
+    "apiCreditUsage": 102
   },
   "questionBank": {
-    "acquired": 5343,
-    "normalized": 5343,
-    "deduplicated": 5178,
-    "unique": 5091,
-    "structurallyValid": 5091,
-    "productionReady": 5091,
+    "acquired": 5849,
+    "normalized": 5849,
+    "deduplicated": 5580,
+    "unique": 5471,
+    "structurallyValid": 5471,
+    "productionReady": 5471,
     "quarantined": 10,
-    "rejected": 77,
-    "duplicates": 165,
+    "rejected": 99,
+    "duplicates": 269,
     "stages": {
-      "acquired": 5343,
-      "normalized": 5343,
-      "deduplicated": 5178,
-      "structurallyValid": 5091,
-      "productionReady": 5091,
+      "acquired": 5849,
+      "normalized": 5849,
+      "deduplicated": 5580,
+      "structurallyValid": 5471,
+      "productionReady": 5471,
       "quarantined": 10,
-      "rejected": 77,
-      "duplicates": 165
+      "rejected": 99,
+      "duplicates": 269
     },
     "bySubject": {
-      "Accounting": 442,
-      "Biology": 429,
-      "Chemistry": 356,
-      "Civic Education": 432,
+      "Accounting": 449,
+      "Biology": 441,
+      "Chemistry": 394,
+      "Civic Education": 440,
       "Commerce": 878,
-      "CRK": 499,
+      "CRK": 503,
       "Economics": 510,
       "English Language": 535,
-      "Literature in English": 185,
+      "Literature in English": 189,
       "Government": 506,
-      "Insurance": 100,
-      "Geography": 15,
-      "Mathematics": 25,
-      "Physics": 179
+      "Insurance": 108,
+      "Geography": 18,
+      "Mathematics": 138,
+      "Physics": 231,
+      "Agricultural Science": 12,
+      "Animal Husbandry": 5,
+      "Arabic": 4,
+      "Computer Science": 10,
+      "Current Affairs": 18,
+      "Fine Art": 8,
+      "Further Mathematics": 6,
+      "Hausa": 8,
+      "History": 21,
+      "Home Economics": 5,
+      "Igbo": 8,
+      "IRK": 13,
+      "Music": 6,
+      "Yoruba": 7
     },
     "byExam": {
       "WAEC": 1626,
-      "JAMB": 3200,
+      "JAMB": 3580,
       "NECO": 265
     },
     "byYear": {
@@ -788,50 +691,225 @@
       "1990": 47,
       "1997": 40,
       "1999": 48,
-      "2000": 146,
-      "2001": 191,
-      "2002": 83,
-      "2003": 242,
-      "2004": 287,
-      "2005": 305,
-      "2006": 288,
-      "2007": 248,
-      "2008": 257,
-      "2009": 404,
-      "2010": 476,
-      "2011": 245,
-      "2012": 369,
-      "2013": 414,
-      "2014": 240,
-      "2015": 244,
-      "2016": 199,
-      "2017": 12,
-      "2018": 13,
-      "2019": 15,
-      "2020": 13,
-      "2021": 10,
-      "2022": 10,
-      "2023": 58,
-      "2024": 55,
-      "2025": 7,
-      "2026": 7
+      "2000": 149,
+      "2001": 194,
+      "2002": 87,
+      "2003": 246,
+      "2004": 292,
+      "2005": 311,
+      "2006": 293,
+      "2007": 256,
+      "2008": 266,
+      "2009": 412,
+      "2010": 481,
+      "2011": 254,
+      "2012": 378,
+      "2013": 421,
+      "2014": 247,
+      "2015": 252,
+      "2016": 208,
+      "2017": 19,
+      "2018": 20,
+      "2019": 23,
+      "2020": 20,
+      "2021": 19,
+      "2022": 18,
+      "2023": 66,
+      "2024": 61,
+      "2025": 15,
+      "2026": 13,
+      "Unknown": 197
     },
     "bySource": {
       "ALOC question database": 4682,
-      "ALOC Station": 218,
-      "SdashAPI": 191
+      "ALOC Station": 401,
+      "SdashAPI": 191,
+      "TUTOR-ME Original AI-generated practice": 197
     },
     "byRightsStatus": {
-      "USER_PROVIDED_AUTHORIZED": 5091
+      "USER_PROVIDED_AUTHORIZED": 5274,
+      "TUTOR_ME_OWNED": 197
     },
     "byVerificationStatus": {
-      "pending": 5091
+      "pending": 5471
     },
     "byTopic": {
-      "Unknown": 5091
+      "Unknown": 5274,
+      "Journal Entries": 1,
+      "Depreciation": 1,
+      "Trial Balance": 1,
+      "Inventory Valuation": 1,
+      "Accounting Basis": 1,
+      "Financial Statements": 1,
+      "Prepaid Expenses": 1,
+      "Crop Protection": 1,
+      "Animal Nutrition and Physiology": 1,
+      "Agricultural Economics": 2,
+      "Farm Mechanization and Implements": 1,
+      "Soil Fertility": 1,
+      "Plant Breeding": 1,
+      "Pest Management": 1,
+      "Crop Physiology": 1,
+      "Agricultural Technology": 1,
+      "Farm Management": 1,
+      "Climate Impact": 1,
+      "Animal Feeds and Feeding": 1,
+      "Digestive System of Ruminants": 1,
+      "Livestock Health and Disease Control": 1,
+      "Animal Reproduction and Artificial Insemination": 1,
+      "Pasture and Range Management": 1,
+      "Noun Gender": 1,
+      "Prepositions": 1,
+      "Idioms": 2,
+      "Script": 1,
+      "Cell Biology": 3,
+      "Genetics": 2,
+      "Plant Biology": 1,
+      "Human Physiology": 1,
+      "Ecology": 2,
+      "Microbiology": 1,
+      "Evolution": 1,
+      "Human Anatomy": 1,
+      "Atomic structure": 1,
+      "Periodic trends": 1,
+      "Chemical bonding": 1,
+      "Stoichiometry": 1,
+      "Thermochemistry": 1,
+      "Acids & Bases": 1,
+      "Redox": 1,
+      "Constitutional Amendments": 1,
+      "Federalism": 1,
+      "Human Rights": 1,
+      "Political Parties": 2,
+      "Electoral Systems": 1,
+      "Civil Society": 1,
+      "Public Administration": 1,
+      "Rule of Law": 1,
+      "Logic Gates": 1,
+      "Computer Networks": 1,
+      "System Software": 1,
+      "Number Systems": 1,
+      "Database Management Systems": 1,
+      "Algorithms": 1,
+      "Database": 1,
+      "Computer Architecture": 1,
+      "Programming": 1,
+      "Networking": 1,
+      "Doctrine of the Trinity": 1,
+      "Christian Worship": 1,
+      "Christian Ethics": 1,
+      "Christian History": 1,
+      "Economy": 2,
+      "Digital Economy": 2,
+      "Technology": 1,
+      "Governance": 2,
+      "International Relations": 3,
+      "Education": 3,
+      "Environment": 2,
+      "Trade": 1,
+      "Science & Technology": 2,
+      "Culture & Heritage": 1,
+      "Health": 1,
+      "Techniques": 1,
+      "Art History": 2,
+      "African Art": 1,
+      "Materials": 1,
+      "Composition": 1,
+      "Color Theory": 1,
+      "Conservation": 1,
+      "Calculus – Integration": 1,
+      "Trigonometry": 2,
+      "Complex Numbers": 1,
+      "Vectors": 1,
+      "Sequences & Series": 1,
+      "Statistics": 1,
+      "Climate classification": 1,
+      "River systems": 1,
+      "Map reading": 1,
+      "Phonology (A'alun Sauti)": 1,
+      "Hausa Grammar (Rabe-raben Kalmomi)": 1,
+      "Idioms and Proverbs (Karin Magana)": 1,
+      "Hausa Culture (Al'adu da Sarauta)": 1,
+      "Hausa Literature (Adabin Baka)": 1,
+      "Hausa Grammar (Siffa)": 1,
+      "Hausa Customs (Al'adar Aure)": 1,
+      "Phonology (Wasulla)": 1,
+      "Pre-colonial Nigeria": 1,
+      "Colonial History": 1,
+      "Post-independence": 1,
+      "Constitutional History": 1,
+      "Modern Nigerian History": 1,
+      "Pre-colonial Nigerian states": 1,
+      "Colonial administration": 1,
+      "Constitutional history": 1,
+      "Independence": 2,
+      "Post-independence politics": 1,
+      "Economic history": 1,
+      "Literary history": 1,
+      "Diaspora": 1,
+      "Pre‐colonial Nigeria": 1,
+      "Colonial Administration": 1,
+      "Civil War": 1,
+      "Economic History": 1,
+      "Military Coups": 1,
+      "Literature": 3,
+      "Modern Politics": 1,
+      "Nutrition and Diet": 1,
+      "Textile and Clothing": 1,
+      "Household Management": 1,
+      "Food Preservation": 1,
+      "Entrepreneurship in Home Economics": 1,
+      "Phonology": 2,
+      "Grammar": 2,
+      "Culture": 3,
+      "Proverbs": 1,
+      "Types of Insurance": 1,
+      "Underwriting": 1,
+      "Premium Calculation": 1,
+      "Policyholder Rights": 1,
+      "Claims Settlement": 1,
+      "Reinsurance": 1,
+      "Insurance Fraud": 1,
+      "Actuarial Science": 1,
+      "Sunnah": 1,
+      "Islamic Law": 1,
+      "Islamic History": 1,
+      "Islamic Theology": 1,
+      "Islamic Practices": 1,
+      "Political Ideology": 1,
+      "Constitution": 1,
+      "Political Economy": 1,
+      "Political Theory": 1,
+      "Public Policy": 1,
+      "Literary Devices": 1,
+      "Shakespeare, Character Motivation": 1,
+      "African Literature, Theme": 1,
+      "Narrative Techniques": 1,
+      "Logarithms": 1,
+      "Binary Operations": 1,
+      "Calculus": 1,
+      "Probability": 1,
+      "Key Signatures": 1,
+      "Intervals": 1,
+      "Traditional Instruments": 1,
+      "Musical Forms": 1,
+      "Rhythm": 1,
+      "Musical Notation": 1,
+      "Elasticity and Hooke's Law": 1,
+      "Thermal Physics and Gas Laws": 1,
+      "Geometrical Optics and Refraction": 1,
+      "Current Electricity": 1,
+      "Atomic and Nuclear Physics": 1,
+      "Simple Harmonic Motion": 1,
+      "Gravitational Field and Orbital Motion": 1,
+      "Wave Motion and Sound": 1,
+      "Vocabulary": 1,
+      "Translation": 1,
+      "Reading Comprehension": 1,
+      "Grammar – Prepositions": 1
     },
     "bySubtopic": {
-      "Unknown": 5091
+      "Unknown": 5471
     },
     "subjectFloors": {
       "English Language": {
@@ -842,32 +920,32 @@
       },
       "Mathematics": {
         "required": 1500,
-        "available": 25,
-        "shortfall": 1475,
+        "available": 138,
+        "shortfall": 1362,
         "met": false
       },
       "Biology": {
         "required": 1200,
-        "available": 429,
-        "shortfall": 771,
+        "available": 441,
+        "shortfall": 759,
         "met": false
       },
       "Chemistry": {
         "required": 1200,
-        "available": 356,
-        "shortfall": 844,
+        "available": 394,
+        "shortfall": 806,
         "met": false
       },
       "Physics": {
         "required": 1500,
-        "available": 179,
-        "shortfall": 1321,
+        "available": 231,
+        "shortfall": 1269,
         "met": false
       },
       "Agricultural Science": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 12,
+        "shortfall": 988,
         "met": false
       },
       "Economics": {
@@ -884,14 +962,14 @@
       },
       "Geography": {
         "required": 1000,
-        "available": 15,
-        "shortfall": 985,
+        "available": 18,
+        "shortfall": 982,
         "met": false
       },
       "Literature in English": {
         "required": 1000,
-        "available": 185,
-        "shortfall": 815,
+        "available": 189,
+        "shortfall": 811,
         "met": false
       },
       "Commerce": {
@@ -902,104 +980,104 @@
       },
       "CRK": {
         "required": 1000,
-        "available": 499,
-        "shortfall": 501,
+        "available": 503,
+        "shortfall": 497,
         "met": false
       },
       "Accounting": {
         "required": 1200,
-        "available": 442,
-        "shortfall": 758,
+        "available": 449,
+        "shortfall": 751,
         "met": false
       },
       "Further Mathematics": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 6,
+        "shortfall": 994,
         "met": false
       },
       "Computer Science": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 10,
+        "shortfall": 990,
         "met": false
       },
       "Civic Education": {
         "required": 1000,
-        "available": 432,
-        "shortfall": 568,
+        "available": 440,
+        "shortfall": 560,
         "met": false
       },
       "Animal Husbandry": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 5,
+        "shortfall": 995,
         "met": false
       },
       "IRK": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 13,
+        "shortfall": 987,
         "met": false
       },
       "Arabic": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 4,
+        "shortfall": 996,
         "met": false
       },
       "History": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 21,
+        "shortfall": 979,
         "met": false
       },
       "Home Economics": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 5,
+        "shortfall": 995,
         "met": false
       },
       "Insurance": {
         "required": 800,
-        "available": 100,
-        "shortfall": 700,
+        "available": 108,
+        "shortfall": 692,
         "met": false
       },
       "Current Affairs": {
         "required": 500,
-        "available": 0,
-        "shortfall": 500,
+        "available": 18,
+        "shortfall": 482,
         "met": false
       },
       "Fine Art": {
         "required": 500,
-        "available": 0,
-        "shortfall": 500,
+        "available": 8,
+        "shortfall": 492,
         "met": false
       },
       "Music": {
         "required": 500,
-        "available": 0,
-        "shortfall": 500,
+        "available": 6,
+        "shortfall": 494,
         "met": false
       },
       "Hausa": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 8,
+        "shortfall": 992,
         "met": false
       },
       "Igbo": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 8,
+        "shortfall": 992,
         "met": false
       },
       "Yoruba": {
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 7,
+        "shortfall": 993,
         "met": false
       }
     },
@@ -1014,36 +1092,36 @@
       {
         "subject": "Mathematics",
         "required": 1500,
-        "available": 25,
-        "shortfall": 1475,
+        "available": 138,
+        "shortfall": 1362,
         "met": false
       },
       {
         "subject": "Biology",
         "required": 1200,
-        "available": 429,
-        "shortfall": 771,
+        "available": 441,
+        "shortfall": 759,
         "met": false
       },
       {
         "subject": "Chemistry",
         "required": 1200,
-        "available": 356,
-        "shortfall": 844,
+        "available": 394,
+        "shortfall": 806,
         "met": false
       },
       {
         "subject": "Physics",
         "required": 1500,
-        "available": 179,
-        "shortfall": 1321,
+        "available": 231,
+        "shortfall": 1269,
         "met": false
       },
       {
         "subject": "Agricultural Science",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 12,
+        "shortfall": 988,
         "met": false
       },
       {
@@ -1063,15 +1141,15 @@
       {
         "subject": "Geography",
         "required": 1000,
-        "available": 15,
-        "shortfall": 985,
+        "available": 18,
+        "shortfall": 982,
         "met": false
       },
       {
         "subject": "Literature in English",
         "required": 1000,
-        "available": 185,
-        "shortfall": 815,
+        "available": 189,
+        "shortfall": 811,
         "met": false
       },
       {
@@ -1084,120 +1162,120 @@
       {
         "subject": "CRK",
         "required": 1000,
-        "available": 499,
-        "shortfall": 501,
+        "available": 503,
+        "shortfall": 497,
         "met": false
       },
       {
         "subject": "Accounting",
         "required": 1200,
-        "available": 442,
-        "shortfall": 758,
+        "available": 449,
+        "shortfall": 751,
         "met": false
       },
       {
         "subject": "Further Mathematics",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 6,
+        "shortfall": 994,
         "met": false
       },
       {
         "subject": "Computer Science",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 10,
+        "shortfall": 990,
         "met": false
       },
       {
         "subject": "Civic Education",
         "required": 1000,
-        "available": 432,
-        "shortfall": 568,
+        "available": 440,
+        "shortfall": 560,
         "met": false
       },
       {
         "subject": "Animal Husbandry",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 5,
+        "shortfall": 995,
         "met": false
       },
       {
         "subject": "IRK",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 13,
+        "shortfall": 987,
         "met": false
       },
       {
         "subject": "Arabic",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 4,
+        "shortfall": 996,
         "met": false
       },
       {
         "subject": "History",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 21,
+        "shortfall": 979,
         "met": false
       },
       {
         "subject": "Home Economics",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 5,
+        "shortfall": 995,
         "met": false
       },
       {
         "subject": "Insurance",
         "required": 800,
-        "available": 100,
-        "shortfall": 700,
+        "available": 108,
+        "shortfall": 692,
         "met": false
       },
       {
         "subject": "Current Affairs",
         "required": 500,
-        "available": 0,
-        "shortfall": 500,
+        "available": 18,
+        "shortfall": 482,
         "met": false
       },
       {
         "subject": "Fine Art",
         "required": 500,
-        "available": 0,
-        "shortfall": 500,
+        "available": 8,
+        "shortfall": 492,
         "met": false
       },
       {
         "subject": "Music",
         "required": 500,
-        "available": 0,
-        "shortfall": 500,
+        "available": 6,
+        "shortfall": 494,
         "met": false
       },
       {
         "subject": "Hausa",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 8,
+        "shortfall": 992,
         "met": false
       },
       {
         "subject": "Igbo",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 8,
+        "shortfall": 992,
         "met": false
       },
       {
         "subject": "Yoruba",
         "required": 1000,
-        "available": 0,
-        "shortfall": 1000,
+        "available": 7,
+        "shortfall": 993,
         "met": false
       }
     ],

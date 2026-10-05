@@ -5,8 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   createUserWithEmailAndPassword, GoogleAuthProvider, RecaptchaVerifier, sendEmailVerification,
-  sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPhoneNumber, signInWithPopup,
-  signOut, updateProfile, type ConfirmationResult,
+  sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPhoneNumber, signInWithPopup, updateProfile, type ConfirmationResult,
 } from "firebase/auth";
 import { firebaseAuth } from "@/lib/firebase/client";
 import { syncFirebaseSession } from "@/lib/firebase/client-session";

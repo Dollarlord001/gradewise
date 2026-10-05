@@ -1,23 +1,26 @@
 {
   "source": "ALOC Station",
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=biology&examType=jamb&limit=15",
-  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MywiaW50ZXJuYWxJZCI6MTg0MCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
-  "lastSuccessfulBatch": 2,
-  "timestamp": "2026-10-03T20:48:18.792Z",
-  "recordsAcquired": 30,
+  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6OCwiaW50ZXJuYWxJZCI6MTY1MCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
+  "lastSuccessfulBatch": 5,
+  "timestamp": "2026-10-03T21:55:00.039Z",
+  "recordsAcquired": 75,
   "recordsAccepted": 0,
   "recordsRejected": 1,
-  "recordsDuplicated": 29,
-  "apiCreditUsage": 2,
-  "errorState": null,
-  "status": "partial",
+  "recordsDuplicated": 74,
+  "apiCreditUsage": 7,
+  "errorState": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
+  "status": "permanent_error",
   "batchFiles": [
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-001.jsonl",
-    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-002.jsonl"
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-002.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-003.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-004.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-biology-jamb-batch-005.jsonl"
   ],
-  "creditsRemaining": 79,
-  "rateLimitRemaining": 27,
-  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MywiaW50ZXJuYWxJZCI6MTg0MCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
+  "creditsRemaining": 68,
+  "rateLimitRemaining": 24,
+  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6OCwiaW50ZXJuYWxJZCI6MTY1MCwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T21:01:45.553Z"
+  "normalizedAt": "2026-10-03T22:09:46.060Z"
 }

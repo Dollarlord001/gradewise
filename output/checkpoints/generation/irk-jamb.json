@@ -1,0 +1,19 @@
+{
+  "subject": "IRK",
+  "exam": "JAMB",
+  "provider": "groq",
+  "batches": 2,
+  "generated": 13,
+  "accepted": 13,
+  "rejected": 0,
+  "status": "provider_unavailable",
+  "providerErrors": {
+    "gemini": "gemini HTTP 429",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402",
+    "groq": "groq HTTP 429"
+  },
+  "model": "openai/gpt-oss-20b",
+  "updatedAt": "2026-10-03T22:02:16.315Z",
+  "lastError": "groq HTTP 429"
+}

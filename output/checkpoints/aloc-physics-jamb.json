@@ -1,16 +1,16 @@
 {
   "source": "ALOC Station",
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=physics&examType=jamb&limit=15",
-  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6NiwiaW50ZXJuYWxJZCI6MTI3MDksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
-  "lastSuccessfulBatch": 9,
-  "timestamp": "2026-10-03T20:48:33.617Z",
-  "recordsAcquired": 135,
-  "recordsAccepted": 131,
-  "recordsRejected": 4,
+  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6OCwiaW50ZXJuYWxJZCI6MTI2NzIsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
+  "lastSuccessfulBatch": 12,
+  "timestamp": "2026-10-03T21:55:06.288Z",
+  "recordsAcquired": 180,
+  "recordsAccepted": 175,
+  "recordsRejected": 5,
   "recordsDuplicated": 0,
-  "apiCreditUsage": 9,
-  "errorState": null,
-  "status": "partial",
+  "apiCreditUsage": 32,
+  "errorState": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
+  "status": "permanent_error",
   "batchFiles": [
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-001.jsonl",
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-002.jsonl",
@@ -20,11 +20,14 @@
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-006.jsonl",
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-007.jsonl",
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-008.jsonl",
-    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-009.jsonl"
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-009.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-010.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-011.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-physics-jamb-batch-012.jsonl"
   ],
-  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6NiwiaW50ZXJuYWxJZCI6MTI3MDksIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
+  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6OCwiaW50ZXJuYWxJZCI6MTI2NzIsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T21:01:45.683Z",
-  "rateLimitRemaining": 25,
-  "creditsRemaining": 77
+  "normalizedAt": "2026-10-03T22:09:46.444Z",
+  "rateLimitRemaining": 18,
+  "creditsRemaining": 36
 }

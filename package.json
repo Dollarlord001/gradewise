@@ -20,17 +20,20 @@
     "content:publish": "node scripts/content-pipeline.mjs publish",
     "content:report": "node scripts/content-ops.mjs report",
     "content:acquire": "node scripts/content-acquisition.mjs",
+    "content:generate:original": "node scripts/generate-original-questions.mjs",
     "content:validate:acquisition": "node scripts/validate-acquisition.mjs",
     "test": "node --test tests/cbt/*.test.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.117.2",
+    "clsx": "^2.1.1",
     "firebase": "^12.19.0",
     "firebase-admin": "^14.5.0",
     "next": "16.3.8",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "tailwind-merge": "^3.7.0",
     "zod": "^4.6.5"
   },
   "devDependencies": {

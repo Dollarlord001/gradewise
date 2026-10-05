@@ -1,23 +1,26 @@
 {
   "source": "ALOC Station",
   "endpointOrFilter": "https://dev.aloc.com.ng/api/v1/questions?subject=chemistry&examType=jamb&limit=15",
-  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MiwiaW50ZXJuYWxJZCI6MTk5MywiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
-  "lastSuccessfulBatch": 2,
-  "timestamp": "2026-10-03T20:48:26.109Z",
-  "recordsAcquired": 30,
-  "recordsAccepted": 17,
+  "pageOrCursor": "eyJxdWVzdGlvbk51bWJlciI6MywiaW50ZXJuYWxJZCI6MTM1OTMsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
+  "lastSuccessfulBatch": 5,
+  "timestamp": "2026-10-03T21:55:03.269Z",
+  "recordsAcquired": 75,
+  "recordsAccepted": 48,
   "recordsRejected": 0,
-  "recordsDuplicated": 13,
-  "apiCreditUsage": 2,
-  "errorState": null,
-  "status": "partial",
+  "recordsDuplicated": 27,
+  "apiCreditUsage": 11,
+  "errorState": "ALOC Station API rejected the request (HTTP 403); review filters, credentials, and access rights.",
+  "status": "permanent_error",
   "batchFiles": [
     "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-001.jsonl",
-    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-002.jsonl"
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-002.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-003.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-004.jsonl",
+    "/data/data/com.termux/files/home/gradewise/content/acquired/aloc-chemistry-jamb-batch-005.jsonl"
   ],
-  "creditsRemaining": 78,
-  "rateLimitRemaining": 26,
-  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MiwiaW50ZXJuYWxJZCI6MTk5MywiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ",
+  "creditsRemaining": 59,
+  "rateLimitRemaining": 21,
+  "nextCursor": "eyJxdWVzdGlvbk51bWJlciI6MywiaW50ZXJuYWxJZCI6MTM1OTMsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0",
   "hasMore": true,
-  "normalizedAt": "2026-10-03T21:01:45.562Z"
+  "normalizedAt": "2026-10-03T22:09:46.114Z"
 }

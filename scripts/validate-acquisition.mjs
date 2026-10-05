@@ -15,14 +15,14 @@ for(const file of questionFiles)await eachJsonl(join(out,'questions',file),q=>{
   if(!q.prompt?.trim()||Object.keys(q.options??{}).length<2||!Object.hasOwn(q.options??{},q.correctAnswer))errors.push(`question structure invalid: ${q.id}`);
   if(!['JAMB','WAEC','NECO','BECE','NCEE','POST-UTME'].includes(q.exam))errors.push(`unsupported exam: ${q.exam}`);
   if(q.examYear!=null&&(!Number.isInteger(q.examYear)||q.examYear<1900||q.examYear>new Date().getFullYear()+1))errors.push(`bad year: ${q.id}`);
-  if(!['USER_PROVIDED_AUTHORIZED','PUBLIC_DOMAIN','OPEN_LICENSE','PUBLISHER_AUTHORIZED','GOVERNMENT_PUBLIC','API_AUTHORIZED'].includes(q.rightsStatus))errors.push(`unacceptable rights: ${q.id}`);
+  if(!['USER_PROVIDED_AUTHORIZED','PUBLIC_DOMAIN','OPEN_LICENSE','PUBLISHER_AUTHORIZED','GOVERNMENT_PUBLIC','API_AUTHORIZED','TUTOR_ME_OWNED'].includes(q.rightsStatus))errors.push(`unacceptable rights: ${q.id}`);
   if(q.verificationStatus==='verified')errors.push(`structural-only question mislabeled verified: ${q.id}`);
   if(!Array.isArray(q.provenance)||!q.provenance.some(p=>p?.source&&p?.sourceId))errors.push(`provenance absent: ${q.id}`);
 });
 checks.acquisition=manifest.questionBank.acquired>=questionCount;
 checks.normalization=questionCount===manifest.questionBank.structurallyValid;
 checks.deduplication=questionCount===manifest.questionBank.unique&&manifest.questionBank.duplicates>=0;
-checks.rights=manifest.questionBank.byRightsStatus&&Object.keys(manifest.questionBank.byRightsStatus).every(k=>['USER_PROVIDED_AUTHORIZED','PUBLIC_DOMAIN','OPEN_LICENSE','PUBLISHER_AUTHORIZED','GOVERNMENT_PUBLIC','API_AUTHORIZED'].includes(k));
+checks.rights=manifest.questionBank.byRightsStatus&&Object.keys(manifest.questionBank.byRightsStatus).every(k=>['USER_PROVIDED_AUTHORIZED','PUBLIC_DOMAIN','OPEN_LICENSE','PUBLISHER_AUTHORIZED','GOVERNMENT_PUBLIC','API_AUTHORIZED','TUTOR_ME_OWNED'].includes(k));
 checks.questionSchema=errors.length===0;
 
 const resources=[];await eachJsonl(join(out,'library/resources.jsonl'),r=>resources.push(r));

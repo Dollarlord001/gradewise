@@ -1,0 +1,19 @@
+{
+  "subject": "Computer Science",
+  "exam": "JAMB",
+  "provider": "groq",
+  "batches": 2,
+  "generated": 11,
+  "accepted": 10,
+  "rejected": 1,
+  "status": "provider_unavailable",
+  "model": "openai/gpt-oss-20b",
+  "updatedAt": "2026-10-03T22:01:58.142Z",
+  "providerErrors": {
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402",
+    "gemini": "gemini HTTP 429",
+    "groq": "groq HTTP 429"
+  },
+  "lastError": "groq HTTP 429"
+}

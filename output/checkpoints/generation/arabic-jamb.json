@@ -1,0 +1,19 @@
+{
+  "subject": "Arabic",
+  "exam": "JAMB",
+  "provider": "groq",
+  "batches": 1,
+  "generated": 6,
+  "accepted": 5,
+  "rejected": 1,
+  "status": "provider_unavailable",
+  "providerErrors": {
+    "gemini": "gemini HTTP 429",
+    "groq": "groq HTTP 429",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402"
+  },
+  "lastError": "gemini HTTP 429",
+  "model": "openai/gpt-oss-20b",
+  "updatedAt": "2026-10-03T22:07:27.927Z"
+}

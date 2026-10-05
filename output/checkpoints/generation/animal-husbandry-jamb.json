@@ -1,0 +1,19 @@
+{
+  "subject": "Animal Husbandry",
+  "exam": "JAMB",
+  "provider": "gemini",
+  "batches": 1,
+  "generated": 5,
+  "accepted": 5,
+  "rejected": 0,
+  "status": "provider_unavailable",
+  "model": "gemini-3.6-flash",
+  "updatedAt": "2026-10-03T21:47:06.047Z",
+  "providerErrors": {
+    "groq": "groq HTTP 429",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402",
+    "gemini": "gemini HTTP 429"
+  },
+  "lastError": "gemini HTTP 429"
+}

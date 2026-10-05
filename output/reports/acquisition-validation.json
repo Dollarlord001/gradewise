@@ -11,10 +11,10 @@
     "provenanceAudit": true,
     "checkpointResumeTest": true
   },
-  "questionCount": 5050,
+  "questionCount": 5471,
   "libraryCount": 14,
-  "duplicateCount": 122,
-  "rejectedCount": 72,
-  "quarantinedCount": 7,
+  "duplicateCount": 269,
+  "rejectedCount": 99,
+  "quarantinedCount": 10,
   "errors": []
 }

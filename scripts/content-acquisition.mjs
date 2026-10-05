@@ -50,7 +50,9 @@ async function harvestOne(provider,subject) {
   if(prior?.status==='permanent_error')return {provider,subject,status:'already-stopped',reason:prior.errorState,records:prior.recordsAcquired??0,checkpoint:checkpointFile};
   const startedAt=new Date().toISOString();
   await mkdir(dirname(checkpointFile),{recursive:true}); await mkdir(dirname(batchFile),{recursive:true});
-  const maxBatches=Math.min(3,Math.max(1,Number(cli['max-batches']??1)||1));
+  // Each invocation remains batch-bounded, but callers can resume repeatedly
+  // through substantially more ALOC cursor pages before rebuilding the corpus.
+  const maxBatches=Math.min(100,Math.max(1,Number(cli['max-batches']??1)||1));
   const checkpoint={...(prior??{}),source:provider==='sdash'?'SdashAPI':'ALOC Station',endpointOrFilter:`${endpoint}?subject=${encodeURIComponent(subject.toLowerCase())}&examType=jamb&limit=${batchSize}`,pageOrCursor:prior?.nextCursor??null,lastSuccessfulBatch:prior?.lastSuccessfulBatch??0,timestamp:startedAt,recordsAcquired:prior?.recordsAcquired??0,recordsAccepted:prior?.recordsAccepted??0,recordsRejected:prior?.recordsRejected??0,recordsDuplicated:prior?.recordsDuplicated??0,apiCreditUsage:prior?.apiCreditUsage??0,errorState:null,status:'in_progress',batchFiles:prior?.batchFiles??[]};
   await writeFile(checkpointFile,JSON.stringify(checkpoint,null,2)+'\n');
   try {
@@ -102,7 +104,7 @@ function normalize(raw) {
   if(year!=null&&(!Number.isInteger(year)||year<1900||year>new Date().getFullYear()+1)) issues.push('invalid exam year');
   if(!exam) issues.push('missing exam');
   if(!Array.isArray(provenance)||!provenance.some(p=>p?.source||p?.sourceName)) issues.push('missing provenance');
-  if(!['USER_PROVIDED_AUTHORIZED','PUBLIC_DOMAIN','OPEN_LICENSE','PUBLISHER_AUTHORIZED','GOVERNMENT_PUBLIC','API_AUTHORIZED'].includes(String(rights).toUpperCase())) issues.push('rights status not cleared');
+  if(!['USER_PROVIDED_AUTHORIZED','PUBLIC_DOMAIN','OPEN_LICENSE','PUBLISHER_AUTHORIZED','GOVERNMENT_PUBLIC','API_AUTHORIZED','TUTOR_ME_OWNED'].includes(String(rights).toUpperCase())) issues.push('rights status not cleared');
   return {q,issues};
 }
 

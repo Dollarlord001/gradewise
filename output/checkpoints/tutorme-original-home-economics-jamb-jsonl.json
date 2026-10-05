@@ -1,0 +1,13 @@
+{
+  "source": "tutorme-original-home-economics-jamb.jsonl",
+  "endpointOrFilter": "local file (JSONL/NDJSON)",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 1,
+  "timestamp": "2026-10-03T22:09:45.469Z",
+  "recordsAcquired": 5,
+  "recordsAccepted": 5,
+  "recordsRejected": 0,
+  "recordsDuplicated": 0,
+  "apiCreditUsage": null,
+  "errorState": null
+}

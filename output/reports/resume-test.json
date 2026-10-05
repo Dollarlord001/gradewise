@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T21:01:42.851Z",
+  "generatedAt": "2026-10-03T22:09:42.587Z",
   "aloc": {
-    "lastSuccessfulBatch": 9,
-    "status": "partial",
+    "lastSuccessfulBatch": 12,
+    "status": "permanent_error",
     "checkpointRetained": true,
-    "batchesCached": 9
+    "batchesCached": 12
   },
   "sdash": {
     "lastSuccessfulBatch": 1,

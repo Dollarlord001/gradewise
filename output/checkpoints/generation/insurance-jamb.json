@@ -1,0 +1,19 @@
+{
+  "subject": "Insurance",
+  "exam": "JAMB",
+  "provider": "groq",
+  "batches": 1,
+  "generated": 8,
+  "accepted": 8,
+  "rejected": 0,
+  "status": "provider_unavailable",
+  "providerErrors": {
+    "gemini": "gemini HTTP 429",
+    "groq": "groq HTTP 429",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402"
+  },
+  "model": "openai/gpt-oss-20b",
+  "updatedAt": "2026-10-03T22:03:18.527Z",
+  "lastError": "gemini HTTP 429"
+}

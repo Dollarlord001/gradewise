@@ -1,0 +1,17 @@
+{
+  "subject": "English Language",
+  "exam": "JAMB",
+  "provider": null,
+  "batches": 0,
+  "generated": 0,
+  "accepted": 0,
+  "rejected": 0,
+  "status": "provider_unavailable",
+  "providerErrors": {
+    "gemini": "gemini HTTP 429",
+    "groq": "groq HTTP 429",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402"
+  },
+  "lastError": "nvidia HTTP 410"
+}

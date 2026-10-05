@@ -1,0 +1,19 @@
+{
+  "subject": "Current Affairs",
+  "exam": "JAMB",
+  "provider": "groq",
+  "batches": 4,
+  "generated": 20,
+  "accepted": 18,
+  "rejected": 2,
+  "status": "partial",
+  "providerErrors": {
+    "gemini": "gemini HTTP 429",
+    "groq": "groq HTTP 400",
+    "nvidia": "nvidia HTTP 410",
+    "openrouter": "openrouter HTTP 402"
+  },
+  "lastError": "openrouter HTTP 402",
+  "model": "openai/gpt-oss-20b",
+  "updatedAt": "2026-10-03T22:08:55.233Z"
+}

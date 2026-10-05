@@ -1,0 +1,13 @@
+{
+  "source": "tutorme-original-geography-jamb.jsonl",
+  "endpointOrFilter": "local file (JSONL/NDJSON)",
+  "pageOrCursor": null,
+  "lastSuccessfulBatch": 1,
+  "timestamp": "2026-10-03T22:09:45.418Z",
+  "recordsAcquired": 3,
+  "recordsAccepted": 3,
+  "recordsRejected": 0,
+  "recordsDuplicated": 0,
+  "apiCreditUsage": null,
+  "errorState": null
+}
