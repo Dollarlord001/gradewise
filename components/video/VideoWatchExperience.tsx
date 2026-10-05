@@ -9,11 +9,18 @@ export function VideoWatchExperience({ video }: { video: VideoRecord & { attribu
   const [position, setPosition] = useState(0); const [status, setStatus] = useState("");
   const lastSavedAt = useRef(0); const completed = useRef(false);
   useEffect(() => {
-    const local = localStorage.getItem(`tutorme-video-progress:${video.id}`);
-    if (local) { try { setPosition((JSON.parse(local) as Progress).positionSeconds); } catch { localStorage.removeItem(`tutorme-video-progress:${video.id}`); } }
+    let active = true;
+    void Promise.resolve().then(() => {
+      const key = `tutorme-video-progress:${video.id}`;
+      const local = localStorage.getItem(key);
+      if (!active || !local) return;
+      try { setPosition((JSON.parse(local) as Progress).positionSeconds); }
+      catch { localStorage.removeItem(key); }
+    });
     fetch(`/api/videos/progress?videoId=${encodeURIComponent(video.id)}`).then((response) => response.json()).then((body: { progress?: Progress | null }) => {
-      if (body.progress && body.progress.positionSeconds > 0) { setPosition(body.progress.positionSeconds); completed.current = body.progress.completed; }
+      if (active && body.progress && body.progress.positionSeconds > 0) { setPosition(body.progress.positionSeconds); completed.current = body.progress.completed; }
     }).catch(() => undefined);
+    return () => { active = false; };
   }, [video.id]);
 
   function save(positionSeconds: number, percent: number, isComplete = false) {
